@@ -2,19 +2,37 @@ class Blog {
     private _id: number;
     private _name: string;
     private _author: Author;
-    private _article: string;
-    
-    // constructor(name: string, surname:string){
-    //     this._name = name;
-    //     this._surname = surname;
-    // }
+    private _articles: Article[];
 
-    // get name(): string { return this._name; }
-    // set name(value:string) { this._name = value; }
-    
-    // get surname(): string { return this._surname; }
-    // set surname(value:string) { this._surname = value; }
+    constructor(name:string, author: Author) {
+        // this._id = ??
+        this._name = name;
+        this._author = author;
+    }
 
-    // get email(): string { return this._email; }
-    // set email(value:string) { this._email = value; }
+    public get name() : string {
+        return this._name;
+    }
+    public set name(v : string) {
+        this._name = v;
+    }
+    
+    public get author() : Author {
+        return this._author;
+    }
+    public set author(v : Author) {
+        this._author = v;
+    }
+
+    addArticle(article:Article):void{
+        this._articles.push(article)
+    }
+
+    getArticlesTitles(): string[]{
+            let titles: string[] = [];
+            this._articles.forEach(article => {
+                titles.push(article.title)
+            });
+            return titles;
+    }
 }

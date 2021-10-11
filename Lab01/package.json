@@ -17,9 +17,9 @@
     "webpack-cli": "^4.9.0",
     "webpack-dev-server": "^4.3.1"
   },
-  "compilerOptions":{
-    "rootDir":"src",
-    "outDir":"build",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "build",
     "target": "ES2020",
     "moduleResolution": "node"
   }
