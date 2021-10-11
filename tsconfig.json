@@ -1,0 +1,8 @@
+{
+    "compilerOpions": {
+        "rootDir":"src",
+        "outDir":"build",
+        "target":"ES2020",
+        "moduleResolution":"node"
+    }
+}
