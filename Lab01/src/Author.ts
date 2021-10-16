@@ -8,7 +8,8 @@ class Author {
         // this._id = ??
         this._name = name;
         this._surname = surname;
-        this._email = this.validateEmail(this._email);
+        if(this.validateEmail(email))
+            this._email = this._email;
     }
 
     get name(): string { return this._name; }
@@ -18,13 +19,20 @@ class Author {
     set surname(value: string) { this._surname = value; }
 
     get email(): string { return this._email; }
-    set email(value: string) { this._email = value; }
+    set email(value: string) { if(this.validateEmail(this.email)) this._email = value; }
 
     private validateEmail(email) {
         let regex = '/^[^\s@]+@[^\s@]+\.[^\s@]+$/';
         if(regex.match(email))
-            return email
-        else
-            return null
+            return true
+        return false
+    }
+
+    /**
+     * parse
+json: string     */
+    public jsonParse(json: string) {
+        return <Author[]>JSON.parse(json);
+        // JSON.stringify
     }
 }
