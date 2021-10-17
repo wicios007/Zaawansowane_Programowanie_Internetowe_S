@@ -1,11 +1,15 @@
-class Autor {
+import { validateEmail } from "./helpers/validateEmail";
+
+export class Autor {
   private _id: number;
   private _imie: string;
   private _nazwisko: string;
   private _email: string;
 
-  constructor(id: number, imie: string, nazwisko: string, email: string) {
-    this._id = id;
+  constructor(imie: string, nazwisko: string, email: string) {
+    if (!validateEmail(email)){
+      throw new Error("Invalid e-mail")
+    }
     this._imie = imie;
     this._nazwisko = nazwisko;
     this._email = email;
@@ -17,6 +21,5 @@ class Autor {
   seEmail(value: string) {
     this._email = value;
   }
-
 
 }

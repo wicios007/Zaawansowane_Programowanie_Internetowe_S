@@ -1,4 +1,4 @@
-class Artykul {
+export class Artykul {
   private _id: number;
   private _tytul: string;
   private _tresc: string;
@@ -6,8 +6,12 @@ class Artykul {
   private _komentarze: Komentarz[]
 
   constructor(tytul: string, tresc: string) {
+    if(!tytul){
+      throw new Error("Tytul nie moze byc pusty.");
+    }
     this._tytul = tytul;
     this._tresc = tresc;
+    this._dataUtworzenia = new Date();
   }
 
   getTytul(): string {
@@ -27,10 +31,10 @@ class Artykul {
   }
 
   dodajKomentarz(komentarz: Komentarz): void {
-
+    this._komentarze.push(komentarz);
   }
 
   pobierzKomentarz(): Komentarz[] {
-    return 
+    return this._komentarze;
   }
 }

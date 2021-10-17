@@ -1,3 +1,6 @@
+import {Autor} from './Autor'
+import {Artykul} from './Artykul'
+
 class Blog {
   private _id: number;
   private _nazwa: string;
@@ -22,18 +25,23 @@ class Blog {
   }
 
   constructor(nazwa: string, autor: Autor){
+    if(!nazwa){
+      throw new Error("Nazwa nie moze być pusta.");
+    }
     this._nazwa = nazwa;
     this._autor = autor;
   }
 
   dodajArtykul(artykul: Artykul): void {
-
+    this._artykuly.push(artykul);
   }
 
   pobierzTytulyArtykulow(): string[] {
-    return 
+    return this._artykuly.map(artykul => artykul.getTytul());
   }
 
-  pobierzArtykul(tytul: string) {}
+  pobierzArtykul(tytul: string) {
+    return this._artykuly.find(artykul => artykul.getTytul() === tytul);
+  }
 
 }

@@ -34,7 +34,7 @@ class Komentarz {
   }
 
   dodajOdpowiedz(odpowiedz: Komentarz): void {
-    
+    this._odpowiedzi.push(odpowiedz);
   }
 
   pobierzOdpowiedzi(): Komentarz[] {
