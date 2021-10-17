@@ -33,11 +33,14 @@ class Komentarz{
     }
 
     dodajOdpowiedzi(odpowiedz : Komentarz) : void{
- 
+        this._odpowiedzi.push(odpowiedz);
     }
 
     pobierzOdpowiedzi() : Komentarz[] {
         var array : Komentarz[] = [];
+        this._odpowiedzi.forEach(element => {
+            array.push(element);
+        });
         return array;
         
     } 
