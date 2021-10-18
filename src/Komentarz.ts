@@ -9,14 +9,14 @@ class Komentarz{
         this._nick = nick;
     }
 
-    /*public get tresc(): string {return this._tresc; }
+    public get tresc(): string {return this._tresc; }
     public set tresc(value: string) {this._tresc = value; }
     
     public get data(): Date {return this._data; }
     public set data(value: Date) {this._data = value; } 
 
     public get nick(): string {return this._nick; }
-    public set nick(value: string) {this._nick = value; }*/
+    public set nick(value: string) {this._nick = value; }
     
     public dodajOdpowiedz(odpowiedz: Komentarz): void{
         this._odpowiedzi.push(odpowiedz);

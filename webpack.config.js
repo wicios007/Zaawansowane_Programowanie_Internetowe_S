@@ -11,7 +11,7 @@ module.exports = {
         path: path.join(__dirname, './build'),
         filename: 'bundle.js'
     },
-    resolve: {extensions: [' .js', ' .ts'] },
+    resolve: {extensions: ['.js', '.ts'] },
     devServer: {
         static: path.join(__dirname, './build/'),
         port: 9000
