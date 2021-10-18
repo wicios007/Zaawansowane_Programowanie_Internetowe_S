@@ -15,14 +15,12 @@ class Artykuł{
     }
 
     public dodajKomentarz(komentarz: Komentarz) : void
-     {this._komentarze.push(komentarz)}
+     {
+         this._komentarze.push(komentarz)
+     }
     
-    
-    
-    
-    public pobierzKomentarze() : Komentarz[]{
-        var array: Komentarz[] = [];
-        this._komentarze.forEach(kom => {array.push(kom)});
-        return array
+    public pobierzKomentarze() : Komentarz[]
+    {
+        return this._komentarze;
     }
 }
