@@ -1,54 +1,29 @@
-class Komentarz {
+export class Komentarz{
   private _tresc:string;
   private _data:Date;
-  private _odpowiedzi: Komentarz[];
-  private _nick: string;
-
-  constructor(tresc:string, nick:string)
-  {
-      this._tresc=tresc;
-      this._nick=nick;
+  private _odpowiedzi:Komentarz[];
+  private _nick:string
+  
+  constructor(tresc:string, nick:string){
+      this._tresc = tresc;
+      this._nick = nick;
+      this._odpowiedzi = [];
   }
 
-      getTresc(): string {
-      return this._tresc;
-    }
-  
+  get tresc():string {return this._tresc}
+  set tresc(value:string) {this._tresc = value}
 
-    setTresc(value: string) {
-      this._tresc = value;
-    }
+  get data():Date {return this._data}
+  set data(value:Date) {this._data = value}
 
-  
-    getData(): Date {
-      return this._data;
-    }
-  
+  get nick():string {return this._nick}
+  set nick(value:string) {this._nick = value}
 
+  dodajOdpowiedz(odpowiedz:Komentarz):void{
+      this._odpowiedzi.push(odpowiedz);
+  }
 
-    setData(value: Date) {
-      return this._data = value;
-    }
-  
-
-
-    getNick(): string {
-      return this._nick;
-    }
-  
-
-    setNick(value: string) {
-      this._nick = value;
-    }
-  
-
-    dodajOdpowiedz(odpowiedz: Komentarz): void {
-      
-    }
-  
-
-    pobierzOdpowiedzi(): Komentarz[] {
+  pobierzOdpowiedz():Komentarz[]{
       return this._odpowiedzi;
-    }
-  
+  }
 }

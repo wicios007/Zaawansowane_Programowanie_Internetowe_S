@@ -1,44 +1,32 @@
-class Artykul {
-  private _tytul: string;
-  private _tresc: string;
-  private _dataUtworzenia: Date;
-  private _komentarze: Komentarz[];
+import { Komentarz } from "./Komentarz";
 
-  constructor(tytul: string, tresc: string)
-  {
-  
-      this._tytul=tytul;
-      this._tresc=tresc;
+export class Artykul {
+    private static _count:number = 0;
+    private _id:number;
+    private _tytul:string;
+    private _tresc:string;
+    private _dataUtworzenia:Date;
+    private _komentarze:Komentarz[];
 
-  }
-
-
-
-      getTytul(): string {
-      return this._tytul;
-    }
-  
-
-    setTytul(value: string) {
-      this._tytul = value;
-    }
-  
-    setTresc(): string {
-
-      return this._tresc;
-    }
-  
-    getTresc(value: string) {
-          this._tresc = value;
-    }
-  
-
-    dodajKomentarz(komentarz: Komentarz): void {
-  
+    constructor(tytul:string, tresc:string){
+        this._id = Artykul._count++;
+        this._tytul = tytul;
+        this._tresc = tresc;
+        this._dataUtworzenia = new Date();
+        this._komentarze = [];
     }
 
-  
-    pobierzKomentarz(): Komentarz[] {
-      return 
+    get tytul():string {return this._tytul}
+    set tytul(value:string) {this._tytul = value}
+
+    get tresc():string {return this._tresc}
+    set tresc(value:string) {this._tresc = value}
+
+    dodajkomentarz(komentarz:Komentarz):void{
+        this._komentarze.push(komentarz);
+    }
+
+    pobierzKomentarze():Komentarz[]{
+        return this._komentarze;
     }
 }
