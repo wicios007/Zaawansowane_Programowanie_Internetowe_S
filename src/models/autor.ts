@@ -38,9 +38,10 @@ class Autor {
         this.email = val;
     }
 
-    constructor(imie: string, nazwisko: string) {
+    constructor(imie: string, nazwisko: string, id: number) {
         this.imie = imie;
         this.nazwisko = nazwisko;
+        this.id = id;
     }
 
   }

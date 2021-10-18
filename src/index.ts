@@ -1,5 +1,4 @@
-function hello() {
-    console.log("Witaj w swiecie TypeScript");
-}
+import { ZadanieCzterySolution } from "./zadanie_4_solution";
 
-hello();
+
+let zad4 = new ZadanieCzterySolution()
