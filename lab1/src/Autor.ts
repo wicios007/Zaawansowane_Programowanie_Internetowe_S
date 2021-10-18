@@ -1,17 +1,24 @@
-class Autor {
-    private _id: number 
+
+export class Autor {
+    private _id: number
     private _imie: string
     private _nazwisko: string
     private _email: string 
 
     get imie(): string {return this._imie}
-    get nazwisko(): string {return this._nazwisko}
-    get email(): string {return this._email}
+    set imie(value: string) {this._imie = value}
 
-    constructor(imie: string, nazwisko: string, id: number, email: string){
-        this._imie = imie
-        this._nazwisko = nazwisko
-        this._id = id
-        this._email = email
+    get nazwisko(): string {return this._nazwisko}
+    set nazwisko(value: string) {this._nazwisko = value}
+
+    get email(): string {return this._email}
+    set email(value: string){this._email = value}
+
+    constructor(imie: string, nazwisko: string){
+        this._imie! = imie
+        this._nazwisko! = nazwisko
+        this._email! = `${imie}.${nazwisko}@gmail.com`
     }
+
+    
 }
