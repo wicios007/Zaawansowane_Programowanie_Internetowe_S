@@ -1,7 +1,8 @@
 import { Artykul } from "./Artykul";
 import { Autor } from "./Autor";
+import { IExportDataJSON } from "./IExportDataJSON";
 
-export class Blog{
+export class Blog implements IExportDataJSON{
     private static _count:number = 0;
     private _id:number;
     private _nazwa:string;
@@ -44,5 +45,10 @@ export class Blog{
         })
 
         return artykul;
+    }
+
+    exportData():void{
+        const json = JSON.stringify(this._autor);
+        console.log(json);
     }
 }

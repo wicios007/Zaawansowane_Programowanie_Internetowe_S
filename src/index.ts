@@ -6,4 +6,4 @@ import { Komentarz } from "./Komentarz";
 const blog = new Blog("aaaa", new Autor("sjds", "jfsadhkj"));
 blog.dodajArtykul(new Artykul("asfdas", "afffasafsfaaf"));
 
-console.log(blog.pobierzTytulyArtykulow());
+console.log(blog.exportData());
