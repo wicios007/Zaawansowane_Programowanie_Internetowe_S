@@ -1,4 +1,4 @@
-class Komentarz{
+export class Komentarz{
     
     private _tresc : string;
     public get tresc() : string {

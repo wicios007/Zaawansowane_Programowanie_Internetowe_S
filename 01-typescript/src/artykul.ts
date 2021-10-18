@@ -1,4 +1,5 @@
-class Artykul {
+import { Komentarz } from "./komentarz";
+export class Artykul {
 
     private _id: number;
 

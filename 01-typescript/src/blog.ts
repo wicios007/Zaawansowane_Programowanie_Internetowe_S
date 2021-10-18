@@ -1,4 +1,7 @@
-class Blog{
+import {Artykul} from './artykul'
+import {Autor} from './autor';
+
+export class Blog{
     private _id : number;
     private _nazwa : string;
     public get nazwa() : string {
