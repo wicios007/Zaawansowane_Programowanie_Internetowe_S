@@ -14,7 +14,17 @@ class Blog{
     get nazwa():string{return this._nazwa;}
     get autor():Autor{return this._autor;}
 
+    dodajArtykul(artykul: Artykul):void{}
 
+    pobierzTytulyArtykulow():string[]{
+        let a: string[];
+        a = ["sad", "happy"];
+        return a;
+    }
+
+    pobierzArtykul(tytul: string){
+
+    }
 
 
 }
