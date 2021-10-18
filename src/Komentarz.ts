@@ -10,8 +10,6 @@ class Komentarz {
         this._nick=nick;
     }
 
-
-
         getTresc(): string {
         return this._tresc;
       }
@@ -48,7 +46,7 @@ class Komentarz {
         
       }
     
-      
+
       pobierzOdpowiedzi(): Komentarz[] {
         return this._odpowiedzi;
       }
