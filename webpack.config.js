@@ -8,8 +8,8 @@ module.exports = {
         app: './src/index.ts'
     },
     output: {
-        path: path.join(__dirname, '/build'),
-        filename: 'budle.js'
+        path: path.join(__dirname, './build'),
+        filename: 'bundle.js'
     },
     resolve: {extensions: ['.js', '.ts']},
     devServer: {
