@@ -2,12 +2,14 @@ import { Artykul } from "./Artykul";
 import { Autor } from "./Autor";
 
 export class Blog{
+    private static _count:number = 0;
     private _id:number;
     private _nazwa:string;
     private _artykuly:Artykul[];
     private _autor:Autor;
 
     constructor(nazwa:string, autor:Autor){
+        this._id = Blog._count++;
         this._nazwa = nazwa;
         this._autor = autor;
         this._artykuly = [];

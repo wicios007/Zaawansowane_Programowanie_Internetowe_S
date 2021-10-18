@@ -1,6 +1,7 @@
 import { Komentarz } from "./Komentarz";
 
 export class Artykul {
+    private static _count:number = 0;
     private _id:number;
     private _tytul:string;
     private _tresc:string;
@@ -8,6 +9,7 @@ export class Artykul {
     private _komentarze:Komentarz[];
 
     constructor(tytul:string, tresc:string){
+        this._id = Artykul._count++;
         this._tytul = tytul;
         this._tresc = tresc;
         this._dataUtworzenia = new Date();

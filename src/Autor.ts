@@ -1,10 +1,12 @@
 export class Autor{
+    private static _count:number = 0;
     private _id:number;
     private _imie:string;
     private _nazwisko:string;
     private _email:string;
 
     constructor(imie:string, nazwisko:string){
+        this._id = Autor._count++;
         this._imie = imie;
         this._nazwisko = nazwisko;
         this._email = `${imie}.${nazwisko}@gmail.com`;
