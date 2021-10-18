@@ -6,9 +6,40 @@ class Artykul
     private _dataUtworzenia: Date;
     private _komentarze: Komentarz[];
 
+    get Tytul(): string
+    {
+        return this._tytul;
+    }
+
+    set Tytul(value: string)
+    {
+        this._tytul = value;
+    }
+
+    get Tresc(): string
+    {
+        return this._tresc;
+    }
+
+    set Tresc(value: string)
+    {
+        this._tresc = value;
+    }
+    
+
     constructor(tytul: string, tresc: string)
     {
         this._tytul = tytul;
         this._tresc = tresc;
+    }
+
+    dodajKomentarz(komentarz: Komentarz): void
+    {
+        this._komentarze.push(komentarz);
+    }
+
+    pobierzKomentarze(): Komentarz[]
+    {
+        return this._komentarze;
     }
 }

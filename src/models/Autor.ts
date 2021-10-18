@@ -17,7 +17,7 @@ class Autor
 
     get Nazwisko(): string
     {
-        return this.Nazwisko;
+        return this._nazwisko;
     }
 
     set Nazwisko(value: string)
