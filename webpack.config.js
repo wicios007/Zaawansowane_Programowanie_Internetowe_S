@@ -2,7 +2,7 @@ var htmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 module.exports = {
-    mode: 'development'
+    mode: 'development',
     devtool: 'source-map',
     entry: {
         app: './src/index.ts'
@@ -25,7 +25,7 @@ module.exports = {
         new htmlWebpackPlugin({
             hash: true,
             title: 'Nasza pierwsza aplikacja typescript',
-            template: './bild/index.html',
+            template: './build/index.html',
             path: path.join(__dirname, './build/'),
             filename: 'index.html'
         })
