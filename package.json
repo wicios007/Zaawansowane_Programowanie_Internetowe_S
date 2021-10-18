@@ -1,14 +1,12 @@
 {
+   "name": "lab1",
+   "version": "1.0.0",
+   "description": "lab1",
+   "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit l",
         "start": "webpack serve --config ./webpack.config.js",
         "build": "webpack --config ./webpack.config.js"
-    },
-    "compilerOptions": {
-        "rootDir": "src",
-        "outDir": "build",
-        "target": "Es2020",
-        "moduleResolution": "node"
     },
     "devDependencies": {
         "html-webpack-plugin": "^5.4.0",
