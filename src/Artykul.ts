@@ -10,8 +10,8 @@ class Artykul{
         this._tresc = tresc;
     }
 
-    public get tytul(): string {return this._tytul; }
-    public set tresc(value: string) {this._tresc = value; } 
+   /* public get tytul(): string {return this._tytul; }
+    public set tresc(value: string) {this._tresc = value; } */
 
     public dodajKomentarz(komentarz: Komentarz): void{
         this._komentarze.push(komentarz);
