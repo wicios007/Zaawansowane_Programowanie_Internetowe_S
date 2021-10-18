@@ -2,6 +2,8 @@
     "compilerOptions":{
         "rootDir":"src",
         "outDir":"build",
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "target": "ES2020",
+        "strictNullChecks": true
     }
 }
