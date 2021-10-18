@@ -1,14 +1,12 @@
-class Blog extends Autor{
+class Blog{
     _id: number;
     _nazwa: string;
     _autor: Autor;
     _artykuły: Artykuł[];
 
-    constructor(_id:number, _nazwa:string, _autor:Autor, _artykuly:Artykuly[]) {
-        this._id = id;
+    constructor(nazwa:string, autor:Autor) {
         this._nazwa = nazwa;
-        this._autor = autor;
-        this._artykuly = artykuly
+        this._autor = autor
     }
 }
 
