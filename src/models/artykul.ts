@@ -5,8 +5,7 @@ export class Artykul {
     private _tytul: string;
     private _tresc: string;
     private _dataUtworzenia: Date;
-    private _komentarz: Komentarz[];
-
+    private _komentarze: Komentarz[];
 
     get Tytul(): string {
         return this._tytul;
@@ -29,4 +28,11 @@ export class Artykul {
         this._tresc = tresc;
     }
 
+    dodajKomentarz(komentarz: Komentarz): void{
+        this._komentarze.push(komentarz);
+    }
+
+    pobierzKomentarze(): Komentarz[]{
+        return this._komentarze;
+    }
 }

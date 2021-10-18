@@ -28,8 +28,15 @@ export class Blog {
         this._autor = autor;
     }
 
-    function dodajArtykul(artykul: Artykul): void {
-            
-        
+    dodajArtykul(artykul: Artykul): void {
+        this._artykuly.push(artykul);
+    }
+
+    pobierzTytulyArtykulow(): string[] {
+        return this._artykuly.map(x => x.Tytul);
+    }
+
+    pobierzArtykol(tytul: string): Artykul | undefined{
+        return this._artykuly.find(x => x.Tytul === tytul);
     }
 }

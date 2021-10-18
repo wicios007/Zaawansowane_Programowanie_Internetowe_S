@@ -1,7 +1,9 @@
+import { HtmlTable } from "./getData";
+
+
 
 function main() {
-    console.log('dsadasdas');
-
+    const tabela = new HtmlTable('test');
 }
 
 main();
