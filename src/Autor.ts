@@ -13,7 +13,7 @@ class Autor {
         return this._imie;
     }
 
-    set imie(value:string) 
+    set imie(imie:string) 
     {
         this._imie = imie;
     }
@@ -22,8 +22,17 @@ class Autor {
     {
         return this._nazwisko;
     }
-    set nazwisko(value:string) 
+    set nazwisko(nazwisko:string) 
     {
         this._nazwisko = nazwisko;
+    }
+
+    get email():string 
+    {
+        return this._email;
+    }
+    set email(email:string) 
+    {
+        this._email = email;
     }
 }

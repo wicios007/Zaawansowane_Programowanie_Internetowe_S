@@ -8,6 +8,18 @@ class Blog{
         this._nazwa = nazwa;
         this._autor = autor
     }
+
+    dodajArtykul(artykul:Artykul): void{
+        
+    }
+
+    pobierzTytulyArtykulowi(): string{
+       
+    }
+
+    pobierzArtykuly(tytul:String){
+        
+    }
 }
 
 
