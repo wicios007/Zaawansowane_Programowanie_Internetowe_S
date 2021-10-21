@@ -1,5 +1,7 @@
-function hello() {
-  console.log("Witaj w swiecie Typescript")
+import { AutorTable } from "./GetData";
+
+function main(){
+    const tabela = new AutorTable('id-tabeli')
 }
 
-hello();
+main()
