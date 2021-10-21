@@ -1,9 +1,11 @@
-export class Autor{
+import { IAutor } from './IAutor';
+export class Autor implements IAutor{
   private static _count:number = 0;
   private _id:number;
-  private _imie:string;
-  private _nazwisko:string;
+  _imie:string; //Po dodanie interfejsu - pierwotnie było private
+  _nazwisko:string; //Po dodanie interfejsu - pierwotnie było private
   private _email:string;
+
 
   constructor(imie:string, nazwisko:string){
       this._id = Autor._count++;

@@ -1,7 +1,7 @@
-import { IExportDataJSON } from './IExportDataJSON';
+
 import { Autor } from './Autor';
 
-export class AutorTable implements IExportDataJSON {
+export class AutorTable {
   private _autorzy : Autor[];
 
   constructor(id:string) {
@@ -19,7 +19,4 @@ export class AutorTable implements IExportDataJSON {
   }
   }
 
-  exportData(): Autor[] {
-    return this._autorzy;
-  }
 }
