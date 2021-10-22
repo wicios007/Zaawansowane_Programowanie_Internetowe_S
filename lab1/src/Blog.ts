@@ -1,6 +1,6 @@
 import {Artykul} from "./Artykul"
 import {Autor} from "./Autor"
-class Blog {
+export class Blog {
     private _id: number;
     private _nazwa: string;
     private _autor: Autor;
