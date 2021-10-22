@@ -4,24 +4,32 @@ var path = require('path');
 module.exports = {
     mode: 'development',
     devtool: 'source-map',
-    entry:{
+    entry: {
         app: './src/index.ts'
     },
-    output:{
+    output: {
         path: path.join(__dirname, './build'),
         filename: 'bundle.js'
     },
-    resolve: {extensions: ['.js', '.ts']},
-    devServer:{
+    resolve: { extensions: ['.js', '.ts'] },
+    devServer: {
         static: path.join(__dirname, './build/'),
-        port:9000   
-    },  
-    module:{
-        rules:[
+        port: 9000
+    },
+    module: {
+        rules: [
             {
-                test:/\
+                test: /\.ts$/, loader: 'ts-loader'
             }
         ]
-    }
-
+    },
+    plugins: [
+        new htmlWebpackPlugin({
+            hash: true,
+            title: 'Nasza pierwsza aplikacja typescript',
+            template: './build/index.html',
+            path: path.join(__dirname, './build/'),
+            filename: 'index.html'
+        })
+    ]
 }
