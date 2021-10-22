@@ -23,5 +23,7 @@ class Blog{
 
      }
 
-     getTitleArticle(){}
+     //getTitleArticle(){}
+//getTitleArticl2e(){}
+
 }
