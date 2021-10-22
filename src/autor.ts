@@ -1,6 +1,6 @@
 import { OperationCanceledException } from "typescript";
 
-export class Autor{
+export class Autor {
     private _id:number;
     private _imie:string;
     private _nazwisko:string;

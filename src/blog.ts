@@ -27,7 +27,7 @@ export class Blog{
         this._artykuly.push(artykul);
     }
     pobierzTytulyArtykulow():string[]{
-        let tytuly:string[];
+        var tytuly:string[];
         this._artykuly.forEach(t=>tytuly.push(t.tytul))
         return tytuly;
     }
