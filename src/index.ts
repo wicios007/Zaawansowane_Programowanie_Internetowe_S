@@ -2,7 +2,7 @@ import { Autor } from "./autor";
 
 function hello()
 {
-    console.log("Witaj w swiecie Typescript");
+    console.log("Witaj w swiecie Typescript joł");
 }
 
 hello();
