@@ -1,42 +1,43 @@
-import { Artykul } from "./artykul";
-import { Autor } from "./autor";
+import { Author } from './autor';
+import { Article } from './artykul';
+
 
 export class Blog {
     private _id: number;
-    private _nazwa: string;
-    private _autor: Autor;
-    private _artykuly: Artykul[];
+    private _name: string;
+    private _author: Author;
+    private _articles: Article[];
 
-    get Nazwa(): string {
-        return this._nazwa;
+    get Name(): string {
+        return this._name;
     }
 
-    set Nazwa(value: string) {
-        this._nazwa = value;
+    set Name(value: string) {
+        this._name = value;
     }
 
-    get Autor(): Autor {
-        return this._autor;
+    get Author(): Author {
+        return this._author;
     }
 
-    set Autor(value: Autor) {
-        this._autor = value;
+    set Author(value: Author) {
+        this._author = value;
     }
 
-    constructor(nazwa: string, autor: Autor) {
-        this._nazwa = nazwa;
-        this._autor = autor;
+    constructor(name: string, author: Author) {
+        this._name = name;
+        this._author = author;
     }
 
-    dodajArtykul(artykul: Artykul): void {
-        this._artykuly.push(artykul);
+    addArticle(article: Article): void {
+        this._articles.push(article);
     }
 
-    pobierzTytulyArtykulow(): string[] {
-        return this._artykuly.map(x => x.Tytul);
+    getArticleTitles(): string[] {
+        return this._articles.map(x => x.Title);
     }
 
-    pobierzArtykol(tytul: string): Artykul | undefined{
-        return this._artykuly.find(x => x.Tytul === tytul);
+    getArticle(title: string): Article | undefined{
+        return this._articles.find(x => x.Title === title);
     }
 }

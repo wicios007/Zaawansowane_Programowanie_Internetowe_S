@@ -4,6 +4,13 @@
         "outDir": "build",
         "target": "ES2020",
         "moduleResolution": "node",
-        "strictNullChecks": true
-    }
+        "strictNullChecks": true,
+        "typeRoots": [
+            "./node_modules/@types"
+        ]
+    },
+    "include": [
+        "./db/**/*",
+        "./src/**/*"
+    ]
 }

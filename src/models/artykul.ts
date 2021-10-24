@@ -1,38 +1,39 @@
-import { Komentarz } from "./komentarz";
+import { Comment } from './komentarz';
 
-export class Artykul {
+
+export class Article {
     private _id: number;
-    private _tytul: string;
-    private _tresc: string;
-    private _dataUtworzenia: Date;
-    private _komentarze: Komentarz[];
+    private _title: string;
+    private _content: string;
+    private _createDate: Date;
+    private _comments: Comment[];
 
-    get Tytul(): string {
-        return this._tytul;
+    get Title(): string {
+        return this._title;
     }
 
-    set Tytul(value: string) {
-        this._tytul = value;
+    set Title(value: string) {
+        this._title = value;
     }
 
-    get Tresc(): string {
-        return this._tresc;
+    get Content(): string {
+        return this._content;
     }
 
-    set Tresc(value: string) {
-        this._tresc = value;
+    set Content(value: string) {
+        this._content = value;
     }
 
-    constructor(tytul: string, tresc: string) {
-        this._tytul = tytul;
-        this._tresc = tresc;
+    constructor(title: string, content: string) {
+        this._title = title;
+        this._content = content;
     }
 
-    dodajKomentarz(komentarz: Komentarz): void{
-        this._komentarze.push(komentarz);
+    addComment(comment: Comment): void{
+        this._comments.push(comment);
     }
 
-    pobierzKomentarze(): Komentarz[]{
-        return this._komentarze;
+    getComments(): Comment[]{
+        return this._comments;
     }
 }
