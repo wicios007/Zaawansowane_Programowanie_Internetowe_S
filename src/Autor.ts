@@ -5,32 +5,32 @@ class Autor
     private _nazwisko: string;
     private _email: string;
 
-    getImie(): string
+    get Imie(): string
     {
         return this._imie;
     }
 
-    setImie(value: string)
+    set Imie(value: string)
     {
         this._imie = value;
     }
 
-    getNazwisko(): string
+    get Nazwisko(): string
     {
         return this._nazwisko;
     }
 
-    setNazwisko(value: string)
+    set Nazwisko(value: string)
     {
         this._nazwisko = value;
     }
 
-    getEmail(): string
+    get Email(): string
     {
         return this._email;
     }
 
-    setEmail(value: string)
+    set Email(value: string)
     {
         this._email = value;
     }

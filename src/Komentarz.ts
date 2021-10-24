@@ -5,33 +5,50 @@ class Komentarz
     private _odpowiedzi: Komentarz[]
     private _nick: string;
 
-    getTresc(): string
+    get Tresc(): string
     {
         return this._tresc;
     }
 
-    setTresc(value: string)
+    set Tresc(value: string)
     {
         this._tresc = value;
     }
 
-    getData(): Date
+    get Data(): Date
     {
         return this._data;
     }
 
-    setData(value: Date)
+    set Data(value: Date)
     {
         this._data = value;
     }
 
-    getNick(): string
+    get Nick(): string
     {
         return this._nick;
     }
 
-    setNick(value: string)
+    set Nick(value: string)
     {
         this._nick = value;
     }
+
+    constructor(tresc: string, nick: string)
+    {
+        this._tresc = tresc;
+        this._nick = nick;
+    }
+
+    public dodajOdpowiedz(odpowiedz: Komentarz):void
+    {
+        this._odpowiedzi.push(odpowiedz);
+    }
+
+    public pobierzOdpowiedzi(): Komentarz[]
+    {
+        return this._odpowiedzi;
+    }
+
 }

@@ -6,22 +6,22 @@ class Artykul
     private _dataUtworzenia: Date;
     private _komentarze: Komentarz[];
 
-    getTytul(): string 
+    get Tytul(): string 
     {
         return this._tytul;
     }
 
-    setTytul(value: string)
+    set Tytul(value: string)
     {
         this._tytul = value;
     }
 
-    getTresc(): string
+    get Tresc(): string
     {
          return this._tresc;
     }
 
-    setTresc(value: string) 
+    set Tresc(value: string) 
     {
         this._tresc = value;
     }

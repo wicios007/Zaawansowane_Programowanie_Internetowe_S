@@ -5,22 +5,22 @@ class Blog
     private _autor: Autor;
     private _artykuly: Artykul[];
 
-    getNazwa(): string
+    get Nazwa(): string
     {
         return this._nazwa;
     }
 
-    setNazwa(value: string)
+    set Nazwa(value: string)
     {
         this._nazwa = value;
     }
 
-    getAutor(): Autor
+    get Autor(): Autor
     {
         return this._autor;
     }
 
-    setAutor(value: Autor)
+    set Autor(value: Autor)
     {
         this._autor = value;
     }
@@ -33,16 +33,18 @@ class Blog
 
     dodajArtykul(artykul: Artykul): void
     {
-        
+        this._artykuly.push(artykul);
     }
 
     pobierzTytulyArtykulow(): string[]
     {
-        
+        let Tytuly: string[] = [];
+        this._artykuly.forEach(artykul => {Tytuly.push(artykul.Tytul)});
+        return Tytuly;
     }
 
-    pobierzArtykul(tutul: string)
+    pobierzArtykul(tytul: string)
     {
-
+        return this._artykuly[tytul];
     }
 }
