@@ -7,20 +7,23 @@ import { Autor } from "./Autor";
 import {HtmlTableData, DataFetcherJson} from "./getData"
 import {Strategy} from "./strategy"
 import Zad3, {Zad3list} from "./zad3"
+import { Zad5 } from "./zad5";
 
 //zad 3 plik json
-// function jsonData () {
-//     const htmltable: Strategy = new DataFetcherJson();
-//     (htmltable.getAutorData('dane.json') as Promise<any>)
-//     .then(data => {
-//         console.log(data);    
-//     })
-// }
-// jsonData()
+function jsonData () {
+    const htmltable: Strategy = new DataFetcherJson();
+    (htmltable.getAutorData('dane.json') as Promise<any>)
+    .then(data => {
+        console.log(data);    
+    })
+}
+jsonData()
 //zad 3 tabelka
 const zad3table = new Zad3()
 const zad3list = new Zad3list()
 
+//zad 5
+const zad5 = new Zad5()
 
 
 //zad 4
