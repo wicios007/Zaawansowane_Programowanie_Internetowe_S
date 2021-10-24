@@ -3,12 +3,26 @@
 //     console.log("Hello typescript");
 // }
 // hello();
-
 import { Autor } from "./Autor";
-import {DataFetcher} from "./fetchData"
+import {HtmlTableData, DataFetcherJson} from "./getData"
+import {Strategy} from "./strategy"
+import Zad3, {Zad3list} from "./zad3"
 
-var fetch = new DataFetcher()
-fetch.fetchData()
+//zad 3 plik json
+// function jsonData () {
+//     const htmltable: Strategy = new DataFetcherJson();
+//     (htmltable.getAutorData('dane.json') as Promise<any>)
+//     .then(data => {
+//         console.log(data);    
+//     })
+// }
+// jsonData()
+//zad 3 tabelka
+const zad3table = new Zad3()
+const zad3list = new Zad3list()
+
+
+
 //zad 4
 // export class Zad4{
 //     element : HTMLElement

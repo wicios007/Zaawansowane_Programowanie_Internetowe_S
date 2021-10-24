@@ -1,5 +1,5 @@
 import {Autor} from "./Autor"
 
 export interface Strategy {
-    getAutorData() : Autor []
+    getAutorData(item: HTMLElement | string) : Autor [] | Promise<Autor[]>
 }
