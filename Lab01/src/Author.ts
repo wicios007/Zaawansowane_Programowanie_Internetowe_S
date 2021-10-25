@@ -1,8 +1,8 @@
-class Author {
+export class Author {
     private _id: number;
     private _name: string;
     private _surname: string;
-    private _email!: string;
+    private _email: string;
 
     constructor(name: string, surname: string, email: string) {
         // this._id = ??
@@ -26,13 +26,5 @@ class Author {
         if(regex.match(email))
             return true
         return false
-    }
-
-    /**
-     * parse
-json: string     */
-    public jsonParse(json: string) {
-        return <Author[]>JSON.parse(json);
-        // JSON.stringify
     }
 }

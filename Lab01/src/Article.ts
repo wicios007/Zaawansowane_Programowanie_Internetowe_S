@@ -1,7 +1,7 @@
 class Article {
     private _id: number;
     private _title: string;
-    private _content: string;
+    private _content?: string;
     private _dateCreated: Date;
     private _comments: Commentary[];
 
@@ -13,7 +13,7 @@ class Article {
     }
 
     public get content(): string {
-        return this._content;
+        return this._content || "";
     }
     public set content(v: string) {
         this._content = v;
@@ -21,9 +21,10 @@ class Article {
 
     constructor(title: string, content: string) {
         // this._id = ??
-        this._title = title;
+        this._title = title || "";
         this._content = content;
         this._dateCreated = new Date();
+        
     }
 
     addComment(comment: Commentary): void{
@@ -32,4 +33,5 @@ class Article {
     getComments(): Commentary[] {
         return this._comments;
     }
+    
 }

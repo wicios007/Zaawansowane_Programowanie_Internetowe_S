@@ -1,3 +1,4 @@
+import { Author } from "./Author"
 class Blog {
     private _id: number;
     private _name: string;
@@ -34,5 +35,8 @@ class Blog {
                 titles.push(article.title)
             });
             return titles;
+    }
+    getArticle(title: string){
+        return this._articles[title];
     }
 }
