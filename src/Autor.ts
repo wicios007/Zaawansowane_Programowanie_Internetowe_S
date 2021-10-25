@@ -15,10 +15,10 @@ export class Autor {
     this._email = email;
   }
 
-  getEmail(): string {
+  get email(): string {
     return this._email;
   }
-  seEmail(value: string) {
+  set email(value: string) {
     this._email = value;
   }
 

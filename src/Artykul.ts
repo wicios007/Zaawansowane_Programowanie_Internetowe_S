@@ -1,3 +1,4 @@
+import {Komentarz} from './Komentarz'
 export class Artykul {
   private _id: number;
   private _tytul: string;
@@ -14,19 +15,19 @@ export class Artykul {
     this._dataUtworzenia = new Date();
   }
 
-  getTytul(): string {
+  get tytul(): string {
     return this._tytul;
   }
 
-  setTytul(value: string) {
+  set tytul(value: string) {
     this._tytul = value;
   }
 
-  setTresc(): string {
+  get tresc(): string {
     return this._tresc;
   }
 
-  getTresc(value: string) {
+  set tresc(value: string) {
     this._tresc = value;
   }
 

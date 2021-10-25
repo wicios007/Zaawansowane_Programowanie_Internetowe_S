@@ -8,19 +8,19 @@ class Blog {
   private _artykuly: Artykul[];
 
 
-  getNazwa(): string {
+  get nazwa(): string {
     return this._nazwa;
   }
 
-  setNazwa(value: string) {
+  set nazwa(value: string) {
     this._nazwa = value;
   }
 
-  getAutor(): Autor {
+  get autor(): Autor {
     return this._autor
   }
 
-  setAutor(value: Autor) {
+  set autor(value: Autor) {
     this._autor = value;
   }
 
@@ -37,11 +37,11 @@ class Blog {
   }
 
   pobierzTytulyArtykulow(): string[] {
-    return this._artykuly.map(artykul => artykul.getTytul());
+    return this._artykuly.map(x => x.tytul);
   }
 
   pobierzArtykul(tytul: string) {
-    return this._artykuly.find(artykul => artykul.getTytul() === tytul);
+    return this._artykuly.find(x => x.tytul === tytul);
   }
 
 }

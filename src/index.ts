@@ -1,10 +1,11 @@
+import { zad4 } from "./zad4";
 
 function hello() {
   console.log("Witaj w świecie Typescript");
   const body = document.body;
-  body.innerHTML = `<button type="button" id="sub">-</button>
-                    <input type="text" id="field" value=0>
-                    <button type="button" id="add">+</button>`
+  body.innerHTML = `<p>Witaj w świecie typescript</p>`
+
+  let z4 = new zad4()
   
 }
 hello();

@@ -1,4 +1,4 @@
-class Komentarz {
+export class Komentarz {
   private _tresc: string;
   private _data: Date;
   private _odpowiedzi: Komentarz[];
@@ -9,27 +9,27 @@ class Komentarz {
     this._nick = nick;
   }
 
-  getTresc(): string {
+  get tresc(): string {
     return this._tresc;
   }
 
-  setTresc(value: string) {
+  set tresc(value: string) {
     this._tresc = value;
   }
 
-  getDate(): Date {
+  get Date(): Date {
     return this._data;
   }
 
-  setDate(value: Date) {
-    return this._data = value;
+  set date(value: Date) {
+    this._data = value;
   }
 
-  getNick(): string {
+  get nick(): string {
     return this._nick;
   }
 
-  setNick(value: string) {
+  set nick(value: string) {
     this._nick = value;
   }
 
