@@ -1,6 +1,6 @@
 import Komentarz from './Komentarz';
-class Artykul {
-  private _id: number;
+class Artykul extends Komentarz{
+  private _idArtykulu: number;
   private _tytul: string;
   private _tresc: string;
   private _dataUtworzenia: Date = new Date();
@@ -20,7 +20,11 @@ class Artykul {
     this._tresc = tresc;
   }
 
-  public constructor(tytul: string, tresc: string) {}
+  public constructor(tytul: string, tresc: string,nick:string) {
+    super(tresc,nick)
+    this._tytul=tytul;
+    this._tresc=tresc;
+  }
   public dodajKomentarz(komentarz: Komentarz): void {}
   public pobierzKomentarze(): Komentarz[] {
     return []

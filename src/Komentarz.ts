@@ -1,14 +1,14 @@
 class Komentarz {
-    private _tresc: string;
+    private _trescKomentarza: string;
     private _data: Date;
     private _odpowiedzi: Komentarz[];
     private _nick: string;
   
     public get tresc(): string {
-      return this._tresc;
+      return this._trescKomentarza;
     }
     public set tresc(tresc: string) {
-      this._tresc = tresc;
+      this._trescKomentarza = tresc;
     }
   
     public get data(): Date {
@@ -25,7 +25,9 @@ class Komentarz {
       this._nick = nick;
     }
   
-    public constructor(tresc: string, nick: string) {}
+    public constructor(tresc: string, nick: string) {
+
+    }
     public dodajOdpowiedz(odpowiedz: Komentarz): void {}
     public pobierzOdpowiedzi(): Komentarz[] {
       return []

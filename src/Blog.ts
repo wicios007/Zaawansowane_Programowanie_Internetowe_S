@@ -1,7 +1,7 @@
 import Autor from './Autor';
 import Artykul from './Artykul';
 
-class Blog {
+class Blog extends Artykul {
   private _id: number;
   private _nazwa: string;
   private _autor: Autor;
@@ -21,8 +21,10 @@ class Blog {
     this._autor = autor;
   }
 
-  public constructor(nazwa: string, autor: Autor) {
-    // super();
+  public constructor(nazwa: string, autor: Autor,tytul:string,tresc:string,nick:string) {
+    super(tytul,tresc,nick);
+    this._nazwa=nazwa;
+    this._autor=autor;
   }
 
   public dodajArtykul(artykul: Artykul): void {}
