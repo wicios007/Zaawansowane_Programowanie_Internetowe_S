@@ -1,0 +1,20 @@
+{
+  "name": "Zaawansowane_Programowanie_Internetowe_S",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/department-intelligent-computer-systems/Zaawansowane_Programowanie_Internetowe_S.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/department-intelligent-computer-systems/Zaawansowane_Programowanie_Internetowe_S/issues"
+  },
+  "homepage": "https://github.com/department-intelligent-computer-systems/Zaawansowane_Programowanie_Internetowe_S#readme"
+}
