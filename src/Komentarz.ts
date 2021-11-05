@@ -21,8 +21,7 @@ class Komentarz
     {
         return this._odpowiedzi.push(odpowiedz);
     }
-    function pobierzOdpowiedzi():Komentarz[]
-    {
-
-    }
+    // function pobierzOdpowiedzi():Komentarz[]
+    // {
+    // }
 }
