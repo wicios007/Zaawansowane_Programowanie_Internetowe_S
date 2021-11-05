@@ -1,20 +1,29 @@
 {
-  "name": "lab1",
+  "name": "zaawansowane_programowanie_internetowe_s",
   "version": "1.0.0",
-  "description": "Lab 1 ",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --config ./webpack.config.js",
     "build": "webpack --config ./webpack.config.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/department-intelligent-computer-systems/Zaawansowane_Programowanie_Internetowe_S.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/department-intelligent-computer-systems/Zaawansowane_Programowanie_Internetowe_S/issues"
+  },
+  "homepage": "https://github.com/department-intelligent-computer-systems/Zaawansowane_Programowanie_Internetowe_S#readme",
   "devDependencies": {
     "html-webpack-plugin": "^5.4.0",
     "ts-loader": "^9.2.6",
     "webpack": "^5.58.2",
     "webpack-cli": "^4.9.0",
-    "webpack-dev-server": "^4.3.1"
+    "webpack-dev-server": "^4.3.1",
+    "rxjs":"7.3.0"
   }
 }
