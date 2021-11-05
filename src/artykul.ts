@@ -1,29 +1,34 @@
-class Artykul{
-    private _id:number;
+import { Komentarz } from "./komentarz";
+
+export class Artykul{
+    private _id:number ;
     private _tytul:string;
     private _tresc:string;
     private _dataUtworzenia:Date;
-    private _komentarze: Komentarz[];
+    private _komentarze:Komentarz[];
 
-    get Tytul():string{
+    get tytul():string{
         return this._tytul;
     }
-
-    set Tytul(value:string){
-        this._tytul = value;
+    set tytul(val:string){
+        this._tytul=val;
     }
-
-    get Tresc():string{
+    get tresc():string{
         return this._tresc;
     }
-
-    set Tresc(value:string){
-        this._tresc = value;
+    set tresc(val:string){
+        this._tresc=val;
+    }
+    constructor(tytul:string,tresc:string){
+        this._tytul=tytul;
+        this._tresc=tresc;
+        this._dataUtworzenia=new Date();
     }
 
-    constructor(tytul:string, tresc:string){
-        this._tytul = tytul;
-        this._tresc = tresc;
+    public dodajKomentarz(komentarz : Komentarz):void{
+        this._komentarze.push(komentarz);
     }
-
+    public pobierzKomentarze():Komentarz[]{
+        return this._komentarze;
+    }
 }

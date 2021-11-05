@@ -1,36 +1,34 @@
-class Autor{
-    private _id: number;
-    private _imie: string;
-    private _nazwisko: string;
-    private _email: string;
+import { OperationCanceledException } from "typescript";
 
-    get Imie(): string{
+export class Autor {
+    private _id:number;
+    private _imie:string;
+    private _nazwisko:string;
+    private _email:string;
+
+    get imie():string{
         return this._imie;
     }
-
-    set Imie(value:string){
-        this._imie = value;
+    set imie(val:string){
+        this._imie=val;
     }
-
-    get Nazwisko(): string{
+    get nazwisko():string{
         return this._nazwisko;
     }
-
-    set Nazwisko(value:string){
-        this._nazwisko = value;
+    set nazwisko(val:string){
+        this._nazwisko=val;
     }
-
-    get Email(): string{
-        return this._email;
+    get email():string{
+        return this.email;
     }
-
-    set Email(value:string){
-        this._email = value;
+    set email(val:string){
+        this._email=val;
     }
-
-    constructor(imie:string, nazwisko:string){
-        this._imie = imie;
-        this._nazwisko = nazwisko;
+    constructor(imie:string, nazwisko:string, email:string){
+        this._imie=imie;
+        this._nazwisko=nazwisko;
+        this._email=email;
+        // if(email===null)
+            // throw new Error("email jest wymagany")
     }
-
 }

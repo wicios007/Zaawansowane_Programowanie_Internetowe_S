@@ -1,33 +1,33 @@
 var htmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path')
+var path=require('path');
 
-module.exports= {
-    mode: 'development',
-    devtool: 'source-map',
+module.exports={
+    mode:'development',
+    devtool:'source-map',
     entry:{
-        app: './src/index.ts'
+        app:'./src/index.ts'
     },
-    output: {
-        path: path.join(__dirname, './build'),
-        filename: 'bundle.js'
+    output:{
+        path:path.join(__dirname,'./build'),
+        filename: 'bungle.js'
     },
     resolve: {extensions: ['.js', '.ts']},
     devServer: {
         static: path.join(__dirname, './build/'),
-        port: 9000
+        port:9000
     },
     module:{
-        rules: [
-            {test: /\.ts$/, loader: 'ts-loader'}
+        rules:[
+            {test:/\.ts$/,loader:'ts-loader'}
         ]
     },
-    plugins: [
+    plugins:[
         new htmlWebpackPlugin({
             hash:true,
             title: 'Nasza pierwsza aplikacja typescript',
-            template: './build/index.html',
-            path: path.join(__dirname, './build/'),
-            filename: 'index.html'
+            template:'./build/index.html',
+            path:path.join(__dirname,'./build/'),
+            filename:'index.html'
         })
-    ]    
+    ]
 }

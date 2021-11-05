@@ -1,44 +1,38 @@
-class Blog{
-    private _id: number;
-    private _nazwa: string;
-    private _autor: Autor;
-    private _artykuly: Artykul[];
+import { Autor } from "./autor";
+import { Artykul } from "./artykul";
 
-    get Nazwa(): string{
+export class Blog{
+    private _id:number;
+    private _nazwa:string;
+    private _autor:Autor;
+    private _artykuly:Artykul[];
+
+    get nazwa():string{
         return this._nazwa;
     }
-
-    set Nazwa(value: string){
-        this._nazwa = value;
+    set nazwa(val:string){
+        this._nazwa=val;
     }
-
-
-    get Autor(): Autor{
+    get autor():Autor{
         return this._autor;
     }
-
-    set Autor(value: Autor){
-        this._autor = value;
+    set autor(val:Autor){
+        this._autor=val;
+    }
+    constructor(nazwa:string, autor:Autor){
+        this._nazwa=nazwa;
+        this._autor=autor;
+    }
+    dodajArtykul(artykul:Artykul):void{
+        this._artykuly.push(artykul);
+    }
+    pobierzTytulyArtykulow():string[]{
+        var tytuly:string[];
+        this._artykuly.forEach(t=>tytuly.push(t.tytul))
+        return tytuly;
     }
 
-    constructor(nazwa:string, autor:Autor ){
-        this._nazwa = nazwa;
-        this._autor = autor;
-    }
-
-
-    dodajArtykul(artykul: Artykul): void
-    {
-         this._artykuly.push(artykul);
-    }
- 
-    pobierzTytulyArtykulow(): string[]
-    {
-        return this._artykuly.map(x => x.Tytul);
-    }
- 
-    pobierzArtykul(tytul: string): Artykul | undefined
-    {
-        return this._artykuly.find(x => x.Tytul === tytul);
+    pobierzArtykul(tytul:string):Artykul{
+        return this._artykuly.find(artykul => artykul.tytul===tytul);
     }
 }
