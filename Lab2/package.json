@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "rxjs": "7.3.0"
+    "rxjs": "^7.4.0"
   },
   "devDependencies": {
     "ts-loader": "^6.1.0",

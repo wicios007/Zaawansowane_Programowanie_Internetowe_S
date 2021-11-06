@@ -17,13 +17,27 @@ let filter = (numbers: number[]):number[] => numbers.filter(n => n%2 == 0);
 console.log(sum(filter(Tablica)));
 
 // Zadanie 3
-let filter2 = (numbers: number[]):number[] => numbers.filter(n => n > 5);
-console.log(sum(filter(filter2(Tablica))));
+let filter2 = (comparator: number, numbers: number[]):number[] => numbers.filter(n => n > comparator);
+console.log(sum(filter(filter2(5,Tablica))));
 
 // Zadanie 4
-let wiekszyOd = function (digit: number): (numbers:number[]) => number[] {
-    return (numbers: number[]){
-        (numbers, digit): number[] => numbers.filter(n => n > digit);
+function oneParameter(comparator: number):
+    (numbers: number[]) => number[]{
+        return (numbers: number[]):number[] => {
+            return filter2(comparator,numbers)
+        }
+    }
+
+let wiekszyOd = oneParameter(4)
+
+console.log(sum(filter(wiekszyOd(Tablica))));
+
+// Zadanie 5
+function curry2<T1, T2, T3>(fun: (arg1: T1, arg2: T2) => T3){
+    return (a1:T1) => (a2:T2) => fun(a1,a2)
 }
 
-console.log(sum(filter(wiekszyOd(Tablica,7))));
+// Zadanie 6
+let tab: string[] = ["Ala", "1","Ewa","12.4"]
+let calculate = (stringTab: string[]) => stringTab.filter(n => +n).map(Number)
+console.log(sum(calculate(tab)))
