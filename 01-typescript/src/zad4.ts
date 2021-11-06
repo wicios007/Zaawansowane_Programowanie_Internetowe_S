@@ -1,20 +1,28 @@
-export class Zad4{
-    private _conuter: number;
+export class Zad4 {
+    private _field: number;
     private _input: HTMLInputElement;
     private _buttonUP: HTMLButtonElement;
+    private _buttonDOWN: HTMLButtonElement;
 
-
-    field : number;
-
-    constructor(){
+    constructor() {
+        this._field = 0;
+        this._input = <HTMLInputElement>document.getElementById("input");
+        this._buttonUP = <HTMLButtonElement>document.getElementById("add");
+        this._buttonDOWN = <HTMLButtonElement>document.getElementById("substract");
+        this._buttonUP.onclick = this.plus;
+        this._buttonDOWN.onclick = this.minus;
     }
 
-    plus(){
-        this.field++;
+
+
+    plus = (): void => {
+        this._field++;
+        this._input.value = this._field.toString();
     }
 
-    minus(){
-        this.field--;
+    minus = (): void => {
+        this._field--;
+        this._input.value = this._field.toString();
     }
 
 }

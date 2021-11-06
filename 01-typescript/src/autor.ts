@@ -3,9 +3,36 @@
 export class Autor{
 
     private _id : number;
+    //private _imie : string;
+    // private _nazwisko : string;
+    // private _email : string;
+
+    
     private _imie : string;
+    public get imie() : string {
+        return this._imie;
+    }
+    public set imie(v : string) {
+        this._imie = v;
+    }
+    
     private _nazwisko : string;
+    public get nazwisko() : string {
+        return this._nazwisko;
+    }
+    public set nazwisko(v : string) {
+        this._nazwisko = v;
+    }
+    
     private _email : string;
+    public get email() : string {
+        return this._email;
+    }
+    public set email(v : string) {
+        this._email = v;
+    }
+    
+    
 
 
     constructor(imie : string, nazwisko : string, email : string){

@@ -1,0 +1,14 @@
+[
+	{
+		"_id": 0,
+		"_imie": "Corry",
+		"_nazwisko": "Regan",
+		"_email": "Corry.Regan@gmail.com"
+	},
+	{
+		"_id": 1,
+		"_imie": "Cory",
+		"_nazwisko": "Trevor",
+		"_email": "Cory.Trevor@gmail.com"
+	}
+]
