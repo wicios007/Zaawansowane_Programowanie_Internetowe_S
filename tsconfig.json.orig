@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "rootDir":"src",
+        "outDir": "build",
+<<<<<<< HEAD
+        "target": "es6",
+        "moduleResolution": "node"
+    }
+=======
+        "target": "ES2020",
+        "moduleResolution": "node",
+        "strictNullChecks": true,
+        "typeRoots": [
+            "./node_modules/@types"
+        ]
+    },
+    "include": [
+        "./db/**/*",
+        "./src/**/*"
+    ]
+>>>>>>> 2f09791e04b700d5f6bb0d67ff87d751e64e986e
+}
