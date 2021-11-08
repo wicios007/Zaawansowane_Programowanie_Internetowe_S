@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function zad1(){
     const array = [1,2,3,4,2,1,2,3];
     return array.reduce((acc, val) => {
@@ -83,3 +84,17 @@ function main() {
 
 
 main();
+=======
+import { Zad5_6_7 } from './zad5_6_7';
+import DataFetcher, { HTMLListData, HtmlTableData, JSONData } from './data-fetcher';
+import { Zad8 } from './zad8';
+
+function main() {
+    // const zad4 = new Zad4();
+    // const zad5_6_7 = new Zad5_6_7();
+    const zad8 = new Zad8();
+}
+
+
+main();
+>>>>>>> 2f09791e04b700d5f6bb0d67ff87d751e64e986e
