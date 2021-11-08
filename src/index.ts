@@ -30,3 +30,33 @@ function add(x: number): (y: number) => number {
         return x + y;
     }
 }
+
+//Zad7
+import { of } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { fromEvent } from 'rxjs';
+import { map } from 'rxjs';
+
+let paragraf = <HTMLElement>document.getElementById("paragraf");
+
+paragraf.pipe(
+  tap(n => {
+    if (n > 1) {
+      document.getElementById("paragraf").innerHTML="Nacisnales ${n}  razy`"
+    }
+  })
+ )
+ .subscribe(console.log);
+
+let element = <HTMLElement>document.getElementById("element");
+let zrodlo = fromEvent(document, "mousemove")
+.pipe(map((e: MouseEvent) => {
+return {
+x: e.clientX,
+y: e.clientY
+}
+}));
+zrodlo.subscribe(e => {
+element.style.left = e.x+"px";
+element.style.top = e.y+"px";
+});
