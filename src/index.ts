@@ -79,5 +79,40 @@ zadanie4 = function(tablica: number[], zadanaLiczba: number): number
 console.log("---------zad4-----------");
 console.log(zadanie4(tablica1, zadanaLiczba));
 
+function zadanie5curring<T1, T2, T3>(fn: (arg1:T1, arg2:T2) =>T3){
+  return (a1:T1) => (a2:T2) => fn(a1,a2);
+}
+
+function getValueIfGreaterThan(val: number, greaterVale: number): number {
+  return val > greaterVale ? val : 0;
+}
+
+function zadanie5() {
+  const array = [1,2,3,4,2,1,2,3,10];
+  let sum = 0;
+
+  array.forEach(x => sum += zadanie5curring(getValueIfGreaterThan)(x)(3));
+  return sum;
+}
+
+console.log("---------zad5-----------");
+console.log(zadanie5());
+
+let tablica2 = ["Ala", "1", "Ewa", "12.4"];
+
+
+let zadanie6:(tablica: string[]) => number;
+
+zadanie6 = function(tablica: string[]): number
+{
+  let suma: number = 0;
+  tablica.forEach(element =>{
+    suma += parseFloat(element) || 0;
+  });
+  return suma;
+}
+
+console.log("---------zad6-----------");
+console.log(zadanie6(tablica2));
 
 
