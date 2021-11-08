@@ -15,9 +15,9 @@ constructor(nazwa:string, autor:Autor){
 dodajArtykul(artykul:Artykul):void{
     
 }
-pobierzTytulArtykulow():string[]{
+//pobierzTytulArtykulow():string[]{
     
-}
+//}
 
 pobierzArtykul(tytul:string){
 

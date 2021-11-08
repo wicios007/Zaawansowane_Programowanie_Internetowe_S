@@ -14,9 +14,9 @@ constructor(tytul:string, tresc:string){
 }
 
 dodajKomentarz(komentarz:Komentarz):void{}
-pobierzKomentarze():Komentarz[]{
+//pobierzKomentarze():Komentarz[]{
    
 }
 
-}
+//}
 

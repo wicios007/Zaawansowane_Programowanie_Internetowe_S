@@ -17,7 +17,7 @@ dodajOdpowiedz(odpowiedz:Komentarz):void{
 
 }
 
-pobierzOdpowiedz():Komentarz[]{
+//pobierzOdpowiedz():Komentarz[]{
 
 }
 
@@ -25,4 +25,4 @@ pobierzOdpowiedz():Komentarz[]{
 //https://stackoverflow.com/questions/46370725/how-to-do-email-validation-using-regular-expression-in-typescript
 //https://stackoverflow.com/questions/16648679/regexp-in-typescript/16648834
 
-}
+//}
