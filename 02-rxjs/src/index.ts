@@ -1,3 +1,4 @@
+import { Application } from "./application";
 var table : number[] = [1,2,3,4,5,6,7,8,9]
 
 //zad1
@@ -45,6 +46,15 @@ let stringArray : String[] = ["asdaf", "qwerty", "1", "zxcvb", "2", "7", "hoho",
 let filtrLiczbZTablicy = (array : String[]) => array.filter(n => +n).map(Number)
 
 console.log("zad6 = " + suma(filtrLiczbZTablicy(stringArray)))
+
+
+
+
+//zad7
+
+
+var app = new Application("clickBtn", "counterParagraph", "turnOn", "turnOff");
+app.start()
 
 
 
