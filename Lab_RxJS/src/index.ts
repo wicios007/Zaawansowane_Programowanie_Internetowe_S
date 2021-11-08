@@ -64,15 +64,41 @@ console.log("Wynik Zadania 4: ", Zad4(array1,7))
 console.log("-------------------------------")
 
 
-let array2 = ["Toma2sz", "Technika32", "Z4j3ci4","g5ra"]
 
-let Zad6:(arr:String[]) => number;
+function currying_zad5<T1, T2, T3>(fn:(arg1:T1, arg2:T2)=>T3) {
+    return (a1:T1)=>(a2:T2)=>fn(a1,a2);
+}
 
-Zad6 = function(arr:String[]):number{
+function wiekszeOd2(num1:number, num2:number):number{
+    if(num1>num2)
+        return num1;
+    else return 0;
+}
+
+let Zad5:(arr:number[],num:number) => number;
+
+Zad5 = function(arr:number[],num:number) {
+    let sum = 0;
+    arr.forEach(element => sum += currying_zad5(wiekszeOd2)(element)(num));
+    return sum;
+}
+
+console.log("Wynik Zadania 5: ", Zad5(array1,2))
+console.log("-------------------------------")
+
+
+let array2 = ["Tomasz", "32", "4","Nowak","52.3"]
+
+let Zad6:(arr:string[]) => number;
+
+Zad6 = function(arr:string[]):number{
     let suma:number = 0;
-    arr.forEach(element =>{
-        
-    })
+    arr.forEach(element =>{ 
+            suma += parseFloat(element) || 0;
+        });
     return suma;
 }
+
+console.log("Wynik Zadania 6: ", Zad6(array2))
+console.log("-------------------------------")
 
