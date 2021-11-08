@@ -1,6 +1,6 @@
 //zad1
 
-var tablica: number[] = [1,2,3,4,5,6,7,8,9];
+let tablica: number[] = [1,2,3,4,5,6,7,8,9];
 console.log(tablica)
 
 function suma(arr: number[]){
@@ -8,25 +8,36 @@ function suma(arr: number[]){
 
 }
 
-console.log(suma(tablica))
+console.log("Zadanie 1 = "+suma(tablica))
 
 
 
 //zad2
-var tablica: number[] = [1,2,3,4,5,6,7,8,9];
-console.log(tablica)
+let parzyste = (cyfry : number[]) : number => cyfry.filter(l => l % 2 == 0).reduce((suma : number, l : number) => suma += l, 0)
+console.log("Zadanie 2 = " + parzyste(tablica));
 
-function parzyste(parz: number[])
+//zad3
+
+let zadane = (cyfry : number[], b : number) : number => cyfry.filter(l => b > l).reduce((suma : number, l : number) => suma += l, 0)
+console.log("Zadanie 3 = "+ zadane(tablica, 4));
+
+//zad4
+function greaterThen(cyfry : number[],b : number)
 {
-    var tab
-    //if(a%2==0){
-
-    //}
+    number => cyfry.filter(l => b > 1)
+    console.log("ta")
+    
 }
 
-function sumaparzyste(arr: number[]){
- return arr.reduce((a, b) => a + b);
+//let zadanie4 = (cyfry : number[], b : number) : number => cyfry.reduce(greaterThen(tablica,6) => suma += l, 0)
 
+//zad5
+function curryy2<T1, T2, T3>(fn:(arg1:T1,arg2:T2)=>T3){
+    return (a1:T1)=>(a2:T2)=>fn(a1,a2);
 }
 
-console.log(suma(tablica))
+//zad6
+let tablica1: string[] = ["Ala", "1", "Ewa", "12.4"];
+console.log(tablica1) 
+let liczbyzstringow = (tab: String[]) => tab.filter(t => +t).map(Number).reduce((suma : number, l : number) => suma += l, 0)
+console.log("Zadanie 6 = "+ liczbyzstringow(tablica1)) 
