@@ -41,3 +41,5 @@ function curry2<T1, T2, T3>(fun: (arg1: T1, arg2: T2) => T3){
 let tab: string[] = ["Ala", "1","Ewa","12.4"]
 let calculate = (stringTab: string[]) => stringTab.filter(n => +n).map(Number)
 console.log(sum(calculate(tab)))
+
+// Zadanie 7
