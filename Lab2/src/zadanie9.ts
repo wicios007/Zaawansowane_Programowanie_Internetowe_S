@@ -1,5 +1,5 @@
 import { fromEvent, observable} from "rxjs";
-import {filter, scan, map} from "rxjs/operators"
+import {filter, scan, map, take} from "rxjs/operators"
 
 class Subject {
     button: HTMLButtonElement
@@ -13,6 +13,7 @@ class Subject {
         var obs = fromEvent(this.button, "click")
         .pipe(map(x => 1)
         ,scan((clicked, counterClicked) => clicked + counterClicked)
+        ,take(5)
         ).subscribe(message => this.showMessage(message))
 
         setTimeout(() => {
@@ -26,8 +27,7 @@ class Subject {
 }
 
 function main(){
-    var sub = new Subject()
-    
+    var sub = new Subject() 
 }
 
 main()

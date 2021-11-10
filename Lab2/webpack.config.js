@@ -4,7 +4,7 @@ var path = require("path");
 module.exports = {
     mode: "development",
     devtool: "source-map",
-    entry: {app:"./src/zadanie8.ts"},
+    entry: {app:"./src/zadanie10.ts"},
     output: {
         path: path.join(__dirname,"./build/"),
         filename: "bundle.js"

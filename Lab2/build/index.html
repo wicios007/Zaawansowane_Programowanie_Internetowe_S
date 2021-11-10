@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <style>
+            body{margin:0; display:flex; justify-content: center; align-items: center; background:lavenderblush; }
+            .btn {
+                width:150px;
+                height:75px;
+                background-color:#224212;
+                color:white;
+            }
+            .btn2{background-color: hotpink;}.btn1{background-color:#260e7d;}
+            .btny{margin: 30px;}#dupa{position:fixed;left:47%;top:30%;}p{font-size:medium}
+            label{font-size:large}#i1{float:left;}
+        </style>
+    </head>
     <body>
+        <div class="btny">
+        <button id="button" class="btn"> button 1</button>
+        </div>
+        <div class="btny">
+            <button id="button2" class="btn btn1"> button 2 </button>
+        </div> 
+        <div class="btny">
+            <button id="button3" class="btn btn2"> button 3</button>
+        </div> 
+        <div id="dupa">
+            <div id="i1">
+            <label>Liczba kliknięć</label>
+        <p id="info1"> </p>
+            </div>
+            <p id="info2"></p>
+        </div>
+
     </body>
 </html>

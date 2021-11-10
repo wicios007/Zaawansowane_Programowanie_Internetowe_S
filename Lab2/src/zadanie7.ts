@@ -10,8 +10,7 @@ export class Subject implements Observer<Event>{
         this.id_ = id
     }
     next(value: Event): void {
-        document.querySelector(`#${this.id_}`).innerHTML = `${this.counter++}`
-
+        document.querySelector(`#${this.id_}`).innerHTML = `${this.counter++}`  
     }
     
     error(err: any): void {console.log(err)}
