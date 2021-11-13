@@ -6,7 +6,6 @@ import { map, filter, tap} from "rxjs/operators"
     private input: HTMLInputElement
     private input2: HTMLInputElement
     private paragraph: HTMLElement
-    subscription: Subscription
 
     constructor() {
         this.input = document.querySelector("input")
@@ -28,26 +27,30 @@ import { map, filter, tap} from "rxjs/operators"
         map( x => parseInt(x))
         )
 
-        source1.subscribe(mess => this.showMessage(mess))
-        source2.subscribe(mess => console.log(mess))
+       let sub1 = source1.subscribe(mess => this.showMessage(mess))
+       let sub2 = source2.subscribe(mess => console.log(mess))
 
-        combineLatest(source1,source2).pipe(
+            let subscribe3 = combineLatest(source1,source2).pipe(
             filter(([x,y]) => isNaN(y))
             ,tap(([x,y])=> console.log("wynik tapa input1:", x, "wynik tapa input2:", y))
             ,map(x => this.input.value )
             ,tap(x => console.log("wynik tapa2:", x))
         ).subscribe(mess => this.showMessage(mess))
 
+        this.unsubscribe(sub1, sub2, subscribe3)
     }
 
     showMessage(val: any) :any {
         this.paragraph.innerHTML = val;
+
     }
 
-    unsubscribe() : void {
+    unsubscribe(sub :Subscription,sub2: Subscription,sub3: Subscription) : void {
         setTimeout(() => {
-            this.subscription.unsubscribe()
-        }, 15000);
+            sub.unsubscribe()
+            sub2.unsubscribe()
+            sub3.unsubscribe()
+        }, 60000);
         
     }
 
