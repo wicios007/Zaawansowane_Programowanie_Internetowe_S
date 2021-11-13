@@ -34,11 +34,11 @@ class Artykul
 
     dodajKomentarz(komentarz: Komentarz): void
     {
-        
+        this._komentarze.push(komentarz);
     }
 
     pobierzKomentarze(): Komentarz[]
     {
-        
+        return this._komentarze;
     }
 }

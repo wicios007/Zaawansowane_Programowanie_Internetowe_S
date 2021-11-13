@@ -1,0 +1,17 @@
+[
+    {
+        "imie": "Tomasz",
+        "nazwisko": "Banaś",
+        "email": "tb@maill.com"
+    },
+    {
+        "imie": "Joanna",
+        "nazwisko": "Mak",
+        "email": "jm@maill.com"
+    },
+    {
+        "imie": "Sebastian",
+        "nazwisko": "Strzelec",
+        "email": "ss@maill.com"
+    }
+]
