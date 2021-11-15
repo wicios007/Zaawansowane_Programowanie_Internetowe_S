@@ -33,22 +33,47 @@ function add(x: number): (y: number) => number {
 
 //Zad7
 import { of } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { take, tap } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
 import { map } from 'rxjs';
 
-let paragraf = <HTMLElement>document.getElementById("paragraf");
+let button = <HTMLElement>document.getElementById("button");
+let buttonObservable = fromEvent(button,'click');
 
-paragraf.pipe(
+let liczba = 0;
+let liczbaOf = of(liczba);
+
+function funkcja_klik()
+{
+  liczbaOf.pipe(
+  take(5),
+  //map (n => { n = n + 1; } ),
+  tap(n => { document.getElementById("paragraf").innerHTML="Przycisk zablokowany"; })
+ );
+}
+
+/*buttonObservable.subscribe( (event) => {
+   liczba = liczba + 1;
+   document.getElementById("paragraf").innerHTML="Nacisnales "+liczba+" razy";
+});*/
+
+//Zad9
+
+const ClickEvent = 
+buttonObservable.pipe(
+  take(5),
+  map (n => { liczba = liczba + 1; } ),
   tap(n => {
-    if (n > 1) {
-      document.getElementById("paragraf").innerHTML="Nacisnales ${n}  razy`"
-    }
+    document.getElementById("paragraf").innerHTML="Nacisnales "+liczba+" razy";
   })
- )
- .subscribe(console.log);
+);
+const subscribe = ClickEvent.subscribe();
 
-let element = <HTMLElement>document.getElementById("element");
+//Zad10
+
+
+
+/*let element = <HTMLElement>document.getElementById("element");
 let zrodlo = fromEvent(document, "mousemove")
 .pipe(map((e: MouseEvent) => {
 return {
@@ -59,4 +84,4 @@ y: e.clientY
 zrodlo.subscribe(e => {
 element.style.left = e.x+"px";
 element.style.top = e.y+"px";
-});
+});*/
