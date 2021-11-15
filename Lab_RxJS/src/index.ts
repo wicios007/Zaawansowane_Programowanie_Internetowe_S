@@ -1,4 +1,7 @@
+import { Click } from "./Click" 
+   
 let array1 = [2,6,3,8,3,2,8,2,7,2];
+
 
 let Zad1: (arr:number[]) => number;
 
@@ -101,4 +104,8 @@ Zad6 = function(arr:string[]):number{
 
 console.log("Wynik Zadania 6: ", Zad6(array2))
 console.log("-------------------------------")
+
+let ButtonApp = new Click ("MyButton", "MyParg");
+
+ButtonApp.start();
 
