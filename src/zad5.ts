@@ -7,7 +7,7 @@ export function base5(tablica:number[], num_upper:number){
         return (a1:T1) => (a2:T2) => func(a1,a2);
     }
     
-    var result = tablica.filter(curry2(greaterThen)(num_upper)).reduce((x,y) => x+y)
-    console.log(result)
-      }
+    var result = tablica.filter(curry2(greaterThen)(num_upper)).reduce((x,y) => x+y);
+    console.log(result);
+}
       
