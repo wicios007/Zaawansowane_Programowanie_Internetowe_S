@@ -5,9 +5,12 @@ export class Zad7 {
     constructor() {
         this.counter = 0;
         const body = document.body;
+        body.innerHTML = `<div class="click"></div>
+                          <p id="counter">0</p>`
+
         const counterRef:HTMLElement = document.getElementById('counter');
         const clikcBox = document.getElementsByClassName('click');
-        
+
         fromEvent(clikcBox, 'click')
         .pipe(takeUntil(this.unsubscribe$))
         .subscribe(data => {

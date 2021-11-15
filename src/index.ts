@@ -1,4 +1,19 @@
-import { Zad7 } from "./zad7";
+import { Zad7 } from "./tasks/zad7";
+import { Zad8 } from "./tasks/zad8";
+import { Zad9 } from "./tasks/zad9";
+import { Zad10 } from "./tasks/zad10";
+import { Zad11 } from "./tasks/zad11";
+import { Zad12 } from "./tasks/zad12";
+import { Zad13 } from "./tasks/zad13";
+import { Zad14 } from "./tasks/zad14";
+import { Zad15 } from "./tasks/zad15";
+import { Zad16 } from "./tasks/zad16";
+import { Zad17 } from "./tasks/zad17";
+import { Zad18 } from "./tasks/zad18";
+import { Zad19 } from "./tasks/zad19";
+import { Zad20 } from "./tasks/zad20";
+import { Zad21 } from "./tasks/zad21";
+
 
 function zad1(){
     const array = [1,2,3,4,2,1,2,3];
@@ -72,16 +87,32 @@ function zad6() {
 }
 
 function main() {
-    console.log('--zad1--', zad1());
-    console.log('--zad2--', zad2());
-    console.log('--zad3--', zad3(3));
-    console.log('--zad4--', zad4(3));
-    console.log('--zad5--', zad5());
-    console.log('--zad6--', zad6());
+    // console.log('--zad1--', zad1());
+    // console.log('--zad2--', zad2());
+    // console.log('--zad3--', zad3(3));
+    // console.log('--zad4--', zad4(3));
+    // console.log('--zad5--', zad5());
+    // console.log('--zad6--', zad6());
+    // const array = [1,2,3,4,2,1,2,3];
 
-    const array = [1,2,3,4,2,1,2,3];
 
-    const zad7 = new Zad7();
+
+    // RxJs
+    // const zad7 = new Zad7();
+    // const zad8 = new Zad8();
+    // const zad9 = new Zad9();
+    // const zad10 = new Zad10();
+    // const zad11 = new Zad11();
+    // const zad12 = new Zad12();
+    // const zad13 = new Zad13();
+    // const zad14 = new Zad14();
+    // const zad15 = new Zad15();
+    // const zad16 = new Zad16();
+    // const zad17 = new Zad17();
+    // const zad18 = new Zad18();
+    // const zad19 = new Zad19();
+    // const zad20 = new Zad20();
+    const zad21 = new Zad21();
 }
 
 main();

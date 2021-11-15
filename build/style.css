@@ -3,3 +3,50 @@
     height: 200px;
     background: red;
 }
+
+.button-container, .input-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+button {
+    width: 150px;
+    background-color: black;
+    border:none;
+    border-radius: 22px;
+    color: #B59958;
+    font-weight: bold;
+    min-height: 35px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+button[disabled]{
+    background-color: #3a3a3a;
+    color: white;
+    cursor: default !important;
+}
+
+input {
+    border: none;
+    border-bottom: 0.2em solid #B59958;
+    margin-left: 10px;
+}
+
+input:focus{
+    outline: none;
+    border-bottom-color:#f7ca2d;
+}
+
+.mouse-container {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
