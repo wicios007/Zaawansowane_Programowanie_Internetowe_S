@@ -1,4 +1,5 @@
 import { fromEvent, Observable, Subject, takeUntil } from "rxjs";
+
 export class Zad7 {
     counter: number;
     unsubscribe$: Subject<void> = new Subject();

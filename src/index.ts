@@ -13,6 +13,8 @@ import { Zad18 } from "./tasks/zad18";
 import { Zad19 } from "./tasks/zad19";
 import { Zad20 } from "./tasks/zad20";
 import { Zad21 } from "./tasks/zad21";
+import { Zad22 } from "./tasks/zad22";
+import { Zad23 } from "./tasks/zad23";
 
 
 function zad1(){
@@ -112,7 +114,9 @@ function main() {
     // const zad18 = new Zad18();
     // const zad19 = new Zad19();
     // const zad20 = new Zad20();
-    const zad21 = new Zad21();
+    // const zad21 = new Zad21();
+    // const zad22 = new Zad22();
+    const zad23 = new Zad23();
 }
 
 main();
