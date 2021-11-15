@@ -1,21 +1,21 @@
 /***************************************************
  ZAD1
 ***************************************************/
-let arrayOfNumber: number[] = [1,2,4,8] 
+let arrayOfNumber: number[] = [1, 2, 4, 8]
 let suma = (numbers: number[]): number => numbers.reduce((sum: number, b: number) => sum += b, 0)
 console.log(suma(arrayOfNumber)) //15
 
 /***************************************************
  ZAD2
 ***************************************************/
-let filtrParzyste = (numbers: number[]): number[] => numbers.filter(num => num%2 == 0)
+let filtrParzyste = (numbers: number[]): number[] => numbers.filter(num => num % 2 == 0)
 console.log(suma(filtrParzyste(arrayOfNumber))) //14
 
 /***************************************************
  ZAD3
 ***************************************************/
 let filtrWiekszeOd = (numbers: number[], x: number): number[] => numbers.filter(num => num > x)
-console.log(suma(filtrWiekszeOd(arrayOfNumber,2))) //12
+console.log(suma(filtrWiekszeOd(arrayOfNumber, 2))) //12
 
 /***************************************************
  ZAD4??
@@ -60,7 +60,7 @@ console.log(suma(filtrParzyste(filtrJedenParametrCurry(array))))
 /***************************************************
  ZAD6
 ***************************************************/
-let arrayOfString: string[] = ['Ala', '2', 'Ma', '3', 'Kota', '7'] 
+let arrayOfString: string[] = ['Ala', '2', 'Ma', '3', 'Kota', '7']
 let filtrLiczba = (arrayOfString: string[]) => arrayOfString.filter(n => +n).map(Number)
 
 console.log(filtrLiczba(arrayOfString))
@@ -69,16 +69,84 @@ console.log(suma(filtrLiczba(arrayOfString)))//12
 /***************************************************
  ZAD 7 info na str 10 w pdf
 ***************************************************/
-//Przyklad tap
-import {interval, tap, map} from "rxjs"
+import { fromEvent } from "rxjs";
+import { map,scan, filter } from 'rxjs/operators';
 
-class App{
-    private div: HTMLElement;
-    
-    constructor(divId: string) {
-        this.div = <HTMLElement>document.querySelector('#$divId');
+let element = document.querySelector<HTMLButtonElement>("#button1");
+let showMessage = 
+    (message: string) => {document.querySelector('#info1').innerHTML += message;}
+
+fromEvent(element, "click")
+    .pipe(
+        scan((a, _) => a + 1, 0),
+        map(_ => 'click<br/>')
+    )
+    .subscribe(showMessage);
+
+/*********************************************************************************************
+ * Notatiren
+*********************************************************************************************/
+//Przyklad z pdf str 10
+/*
+export interface IObserver {
+    notify(data: any): void;
+}
+
+export class ClickSubject {
+    private observerCollection: IObserver[] = [];
+
+    constructor(id: string) {
+        document.querySelector(`#${id}`)
+            .addEventListener('click', e => this.notifyObservers(e));
     }
-    
+
+    registerObserver(observer: IObserver) {
+        this.observerCollection.push(observer);
+    }
+
+    unregisterObserver(observer: IObserver) {
+        this.observerCollection =
+            this.observerCollection.filter(obs => obs != observer);
+    }
+
+    private notifyObservers(clickEvent: Event) {
+        this.observerCollection.forEach(observer => {
+            observer.notify(clickEvent);
+        });
+    }
+}
+
+class Observer implements IObserver {
+    private id: string;
+
+    constructor(id: string) {
+        this.id = id;
+    }
+
+    notify(data: any): void {
+        document.querySelector(`#${this.id}`).innerHTML += "click<br/>"
+    }
+}
+
+let subject = new ClickSubject("button1");
+let observer1 = new Observer("info1");
+
+subject.registerObserver(observer1);
+let observer2 = new Observer("info2");
+subject.registerObserver(observer2);
+*/
+//Przyklad tap
+/*
+import { interval } from "rxjs"
+import { filter, map, tap } from "rxjs/operators"
+
+class App {
+    private div: HTMLElement;
+
+    constructor(divId: string) {
+        this.div = <HTMLElement>document.querySelector(`#${divId}`);
+    }
+
     public show(text: string) {
         this.div.innerHTML = text;
     }
@@ -89,16 +157,21 @@ class App{
                             Math.floor(Math.random() * 6 + 1),
                             Math.floor(Math.random() * 6 + 1)
                         ]),
-            )
+            filter(v => v[0] + v[1] > 10),
+            map(v => v[0] > v[1] ? "pierwsza" : "druga")
+            //map(v => {
+            //        v[0] > v[1] ? "pierwsza" : "druga"
+            //    })
+
+        ).subscribe((s) => this.show(s))
+
     }
 }
-let app = new App("buttom1", "message")
+let app = new App("button1")
 app.start();
+*/
 
 
-/*********************************************************************************************
- * Notatiren
-*********************************************************************************************/
 /*
 import { from } from "rxjs";
 import { scan,map } from "rxjs/operators"
@@ -158,7 +231,7 @@ class App{
         this.paragraph = document.querySelector(`#${paragraphId}`)
         this.init();
     }
-    
+
     public init(){
         fromEvent(this.turnon, "click").subscribe(() => this.turnOnButton());
         fromEvent(this.turnoff, "click").subscribe(() => this.turnOffButton());
