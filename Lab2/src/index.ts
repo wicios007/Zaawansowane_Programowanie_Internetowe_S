@@ -1,4 +1,7 @@
 //zad1
+import { fromEvent } from 'rxjs';
+import {take} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 let tablica: number[] = [1,2,3,4,5,6,7,8,9];
 console.log(tablica)
@@ -41,3 +44,19 @@ let tablica1: string[] = ["Ala", "1", "Ewa", "12.4"];
 console.log(tablica1) 
 let liczbyzstringow = (tab: String[]) => tab.filter(t => +t).map(Number).reduce((suma : number, l : number) => suma += l, 0)
 console.log("Zadanie 6 = "+ liczbyzstringow(tablica1)) 
+
+
+//zad7-9
+
+const btn = document.getElementById('button');
+const abcd = document.getElementById('abcd')
+const clickObs = fromEvent(btn, 'click');
+const clic=clickObs.pipe(take(5))
+const sub = clic.subscribe(event => console.log(`Liczba kliknięć`));
+const numb = clic.pipe(map(event => abcd.innerHTML='tak'));
+
+
+
+//zad10
+
+
