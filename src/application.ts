@@ -5,15 +5,15 @@ export class Application{
 
     private button:     HTMLElement
     private paragraph:  HTMLElement
-    private sub:        HTMLElement
+    private sub: Subscription    
     private turnOn:     HTMLElement
     private turnOff:    HTMLElement
 
     constructor(_button: string, _paragraph: string, on: string, off: string) {
-        this.button = document.querySelector(`#${_button}`)
-        this.paragraph = document.querySelector(`#${_paragraph}`)
-        this.turnOn = document.querySelector(`#${on}`)
-        this.turnOff = document.querySelector(`#${off}`)
+        this.button = document.querySelector(`#${_button}`)  as HTMLButtonElement
+        this.paragraph = document.querySelector(`#${_paragraph}`) as HTMLParagraphElement
+        this.turnOn = document.querySelector(`#${on}`) as HTMLButtonElement
+        this.turnOff = document.querySelector(`#${off}`) as HTMLButtonElement
     }
     public start() {
         fromEvent(this.turnOn, "click").subscribe(() => this.turnOnButton())
@@ -27,7 +27,7 @@ export class Application{
     private turnOffButton() {
         if (this.sub) {
             this.sub.unsubscribe()
-            this.sub = undefined
+            
         }
     }
 

@@ -1,4 +1,9 @@
 import{ Application } from "./application";
+import { Zad11 } from "./zad/zad11";
+import { Zad12 } from "./zad/zad12";
+import { Zad13 } from "./zad/zad13";
+import { Zad14 } from "./zad/zad14";
+import { Zad15 } from "./zad/zad15";
 var table : number[] = [1,2,3,4,5,6,7,8,9]
 
 let suma = (liczby : number[]) : number => liczby.reduce((suma : number, a : number) => suma += a, 0)
@@ -30,5 +35,28 @@ let funJedenParamCurry = curry2(filtrGreaterThen)
 let filtrJedenParamCurry = funJedenParamCurry(3)
 console.log("zad5 = " +suma(filtrEven(filtrJedenParamCurry(table))))
 
-var strtable : string[] = ["Ala", "1", "Ewa", "12.4"]
+let stringArray : String[] = ["asdaf", "qwerty", "1", "zxcvb", "2", "7", "hoho", "2fdsa"]
+
+let filtrLiczbZTablicy = (array : String[]) => array.filter(n => +n).map(Number)
+
+console.log("zad6 = " + suma(filtrLiczbZTablicy(stringArray)))
+
+
+
+//zad7-10
+
+
+// var app = new Application("clickBtn", "counterParagraph", "turnOn", "turnOff");
+// app.start()
+
+
+//zad11
+ //var zad11 = new Zad11();
+ //var zad12 = new Zad12();
+//var zad13 = new Zad13();
+//var zad14 = new Zad14();
+//var zad15 = new Zad15();
+
+
+
 
