@@ -1,10 +1,10 @@
 import{ Application } from "./application";
-import { Zad11 } from "./zad/zad11";
-import { Zad12 } from "./zad/zad12";
-import { Zad13 } from "./zad/zad13";
-import { Zad14 } from "./zad/zad14";
-import { Zad15 } from "./zad/zad15";
-var table : number[] = [1,2,3,4,5,6,7,8,9]
+//import { Zad11 } from "./zad/zad11";
+//import { Zad12 } from "./zad/zad12";
+//import { Zad13 } from "./zad/zad13";
+//import { Zad14 } from "./zad/zad14";
+//import { Zad15 } from "./zad/zad15";
+/*var table : number[] = [1,2,3,4,5,6,7,8,9]
 
 let suma = (liczby : number[]) : number => liczby.reduce((suma : number, a : number) => suma += a, 0)
 console.log("zad1 = " + suma(table));
@@ -41,13 +41,13 @@ let filtrLiczbZTablicy = (array : String[]) => array.filter(n => +n).map(Number)
 
 console.log("zad6 = " + suma(filtrLiczbZTablicy(stringArray)))
 
-
+*/
 
 //zad7-10
 
 
-// var app = new Application("clickBtn", "counterParagraph", "turnOn", "turnOff");
-// app.start()
+ var app = new Application("clickBtn", "counterParagraph", "turnOn", "turnOff");
+app.start()
 
 
 //zad11
