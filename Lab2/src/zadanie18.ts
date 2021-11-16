@@ -15,22 +15,21 @@ class Subject{
     
     public init(){
 
-        let source1 = fromEvent(this.input, "keyup");
-        let source2 = fromEvent(this.input2, "keyup");
+        let source1 = fromEvent(this.input, "input");
+        let source2 = fromEvent(this.input2, "input");
    
         combineLatest(source1, source2).pipe(
             map((x:any) => [x[0].target.value, x[1].target.value]),
             filter(data => {
                 const clear = () => {
-                if(data[0] == "" || data[1] == "" || data[0] &&  data[1] == ""){
-                    this.paragraph.innerHTML = ""
+            if(data[0] == "" || data[1] == "" || data[0] == "" && data[1] ==""){
+                this.paragraph.innerHTML=""
                 return data[1] && data[2];
-                    }
-                    else throw Error('Error, value is NaN');
-                }
-            return +data[0] && +data[1] ? true : clear();
-            })
-            ,catchError(e => {
+            } else throw Error("Error, value is NaN");
+        }
+            return data[0] && data[1] ? true : clear();
+            }),
+            catchError(e => {
                 console.warn("Value should be a number type ");
                 return throwError(e)
             }),
