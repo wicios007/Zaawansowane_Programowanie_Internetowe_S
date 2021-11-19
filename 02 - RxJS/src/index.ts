@@ -1,4 +1,5 @@
-import { from } from "rxjs";
+import { from, fromEvent } from "rxjs";
+import { formatDiagnostic } from "typescript";
 const tab = [1,2,3,4,5,6,7,8,9,10];
 
 for(var i=0; i<tab.length; i++)
@@ -79,8 +80,40 @@ function z5(){
     console.log("Sum of Tab Z5: "+ result)
 }
 
+function z6(){
+    let list: string[] = ["Ala", "1", "Ewa", "12.4"];
+    let sum = list.filter(Number).map(numbers => parseFloat(numbers)).reduce((a,x)=> a+x);
+    console.log("Sum of Z6: "+sum);
+}
+
+function z7(){
+
+    const button1  = <HTMLButtonElement>document.querySelector("#clickbtn");
+    const ptext = <HTMLButtonElement>document.querySelector("#par");
+    
+    let sum = 1;
+
+    fromEvent(button1,"click").subscribe(() => {ptext.textContent = `Clicked ${sum++}`});
+
+    console.log(button1);
+}
+
+function z8(){
+
+    const button1  = <HTMLButtonElement>document.querySelector("#clickbtn");
+    let ptext = <HTMLButtonElement>document.querySelector("#par");
+    
+    let sum = 1;
+
+    
+
+    console.log(button1);
+}
+
 z1();
 z2();
 z3();
 z4();
 z5();
+z6();
+z7();
