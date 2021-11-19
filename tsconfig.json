@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
-        "rootDir": "src",
+        "rootDir":"src",
         "outDir": "build",
-        "target": "ES2017",
+        "target": "es6",
         "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true,
+        "lib" : ["es5","es6", "dom", "DOM.Iterable"]
     }
 }
