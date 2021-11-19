@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 module.exports = {
     devtool: "source-map",
-    entry: { myapp: "./src/index.ts" },
+    entry: { myapp: "./src/zadanie25.ts" },
     output: {
         path: path.join(__dirname, "./build/"),
         filename: "bundle.js"
