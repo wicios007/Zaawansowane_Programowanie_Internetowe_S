@@ -1,12 +1,23 @@
-import {base1} from './zad1'
-import {base2} from './zad2'
-import {base3} from './zad3'
+
+// import { Zad7 } from './tasks/zad7';
+// import { Zad8 } from './tasks/zad8';
+// import { Zad9 } from './tasks/zad9';
+import { Zad10 } from './tasks/zad10';
+// import { Zad11 } from './tasks/zad11';
+// import { Zad12 } from './tasks/zad12';
+// import { Zad13 } from './tasks/zad13';
+
+
 
 function main(){
-    let tablica_liczb: number[] = [1,2,3,4,5,6,7,8,9];
-    const suma = base1();
-    const suma_parz = base2();
-    const sum_upper = base3(tablica_liczb, 4);
+    // const zad7 = new Zad7();
+    // const zad8 = new Zad8();
+    // const zad9 = new Zad9();
+    const zad10 = new Zad10();
+    // const zad11 = new Zad11();
+    // const zad12 = new Zad12();
+    // const zad13 = new Zad13();
+
 }
 
-main()
+ main()

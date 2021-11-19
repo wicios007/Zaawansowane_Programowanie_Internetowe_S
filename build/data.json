@@ -1,17 +1,17 @@
 [
     {
-        "firstname": "Joanna",
-        "lastname": "Bernarska",
-        "email": "jk@smth.smth"
+        "id": 1,
+        "firstName": "Ala",
+        "lastName": "Kot"
     },
     {
-        "firstname": "Andrzej",
-        "lastname": "Nowakowski",
-        "email": "mw@smth.smth"
+        "id": 2,
+        "firstName": "Tomasz",
+        "lastName": "Nowak"
     },
     {
-        "firstname": "Michal",
-        "lastname": "Wisniewski",
-        "email": "mw@smth.smth"
+        "id": 3,
+        "firstName": "Ewa",
+        "lastName": "Kowalska"
     }
 ]
