@@ -1,0 +1,16 @@
+[
+  {
+    "first_name": "Piotr",
+    "last_name": "Zieliński"
+  },
+  {
+    "first_name": "Paweł",
+    "last_name": "Zieliński",
+    "email": "test@te.te"
+  },
+  {
+    "first_name": "Paulina",
+    "last_name": "Zielińska",
+    "email": "test1@te.te"
+  }
+]
