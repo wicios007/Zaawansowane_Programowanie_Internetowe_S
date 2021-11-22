@@ -1,3 +1,5 @@
+import { fromEvent } from 'rxjs';
+
 function hello() {
     console.log("Witaj w swiecie Typescript");
 }
@@ -31,3 +33,40 @@ console.log(filtrLiczba(tab6))
 console.log(suma(filtrLiczba(tab6)))
 
 console.log("==== RxJS ====")
+
+/*
+class Zad7 {
+    //private button: HTMLElement;
+
+    const btn = document.getElementById('button')
+    const clickObs = fromEvent(btn, 'click')
+    const l7 = clickObs.subscribe(event => console.log('Kliknięcie przycisku'))
+}
+*/
+
+const przycisk = document.getElementById('button')
+//const clickObs = fromEvent(this.przycisk, 'click')
+//const l7 = clickObs.subscribe(event => console.log('Kliknięcie przycisku'));
+
+/*
+import { Observable, Subject, takeUntil } from "rxjs";
+export class Zad7 {
+    counter: number;
+    unsubscribe$: Subject<void> = new Subject();
+    constructor() {
+        this.counter = 0;
+        const body = document.body;
+        body.innerHTML = `<div class="click"></div>
+                          <p id="counter">0</p>`
+
+        const counterRef: HTMLElement = document.getElementById('ileKlikniec');
+        const clikcBox = document.getElementsByClassName('click');
+
+        fromEvent(clikcBox, 'click')
+            .pipe(takeUntil(this.unsubscribe$))
+            .subscribe(data => {
+                counterRef.innerHTML = (++this.counter).toString();
+            });
+    }
+}
+*/
