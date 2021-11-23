@@ -11,11 +11,13 @@ export class Zad01Component implements OnInit {
     firstName: "Łukasz",
     lastName: "Czech"
   }
-  p1Class: any;
-  fontSize: boolean = false;
-  fontColor: boolean = false;
+  fontSize: boolean;
+  fontColor: boolean;
 
-  constructor() { }
+  constructor() { 
+    this.fontSize = false;
+    this.fontColor = false;  
+  }
 
   ngOnInit(): void {
   }

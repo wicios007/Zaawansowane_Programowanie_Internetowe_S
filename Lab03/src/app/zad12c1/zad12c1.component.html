@@ -1,0 +1,5 @@
+<button class="btn btn-primary" (click)="activateComponentTwo()">Wyświetl drugi komponent</button>
+
+<div *ngIf="componentTwoActive">
+    <app-zad12c2 [isActive]="componentTwoActive" (deactivate)="hideComponent()"></app-zad12c2>
+</div>

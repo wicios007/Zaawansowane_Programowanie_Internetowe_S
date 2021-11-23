@@ -1,0 +1,14 @@
+<table class="table">
+    <thead>
+        <th scope="col">Galeria</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let image of images; let i = index;">
+            <td *ngIf="i == selectedIndex">
+                <img src="{{image.url}}" alt="{{image.name}}">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-primary" *ngIf="selectedIndex >= 1" (click)="selectPrevImageOnClick()">Poprzednie</button>
+<button class="btn btn-primary" *ngIf="selectedIndex < images.length-1" (click)="selectNextImageOnClick()">Następne</button>

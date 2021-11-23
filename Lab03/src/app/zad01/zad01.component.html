@@ -1,2 +1,4 @@
-<button (click)="onClick()">Przycisk</button><button (click)="onClickFontSize()">Zwiększ czcionkę</button><button (click)="onClickFontColor()">Zmień kolor i przekreśl</button>
-<p [ngClass]="{'font-size': fontSize, 'font-color': fontColor}">{{text}}</p> 
+<button class="btn btn-primary" (click)="onClick()">Przycisk</button>
+<button class="btn btn-primary" (click)="onClickFontSize()">Zwiększ czcionkę</button>
+<button class="btn btn-primary" (click)="onClickFontColor()">Zmień kolor i przekreśl</button>
+<p [ngClass]="{'p1': true, 'font-size': fontSize, 'font-color': fontColor}">{{text}}</p> 
