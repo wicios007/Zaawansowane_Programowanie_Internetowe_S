@@ -4,6 +4,11 @@ import { Zad12 } from "./zad/zad12";
 import { Zad13 } from "./zad/zad13";
 import { Zad14 } from "./zad/zad14";
 import { Zad15 } from "./zad/zad15";
+import { Zad16 } from "./zad/zad16";
+import { Zad17 } from "./zad/zad17";
+import { Zad18 } from "./zad/zad18";
+import { Zad19 } from "./zad/zad19";
+import { Zad20 } from "./zad/zad20";
 // var table : number[] = [1,2,3,4,5,6,7,8,9]
 
 // //zad1
@@ -67,7 +72,13 @@ import { Zad15 } from "./zad/zad15";
  //var zad12 = new Zad12();
 //var zad13 = new Zad13();
 //var zad14 = new Zad14();
-var zad15 = new Zad15();
+//var zad15 = new Zad15();
+//var zad16 = new Zad16();
+//var zad17 = new Zad17();
+//var zad18 = new Zad18();
+//var zad19 = new Zad19();
+var zad20 = new Zad20();
+
 
 
 
