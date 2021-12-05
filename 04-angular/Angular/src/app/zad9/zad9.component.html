@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-title">
+        <h2>Zad 9</h2>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <th scope="col">Galeria</th>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let img of images; let i = index">
+                    <td *ngIf="i == selectedIndex">
+                        <img src="{{img.url}}" alt="{{img.desc}}">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-primary" *ngIf="selectedIndex >= 1" (click)="prevImg()">Previous</button>
+        <button class="btn btn-primary" *ngIf="selectedIndex < images.length-1" (click)="nextImg()">Next</button>
+    </div>
+</div>

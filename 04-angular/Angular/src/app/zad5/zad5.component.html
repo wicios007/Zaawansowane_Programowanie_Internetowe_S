@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem">
+    <div class="card-title">
+        <h2>Linki zad2</h2>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li [ngClass]="{'list-group-item':true, 'list-group-item-action':true, 'active': index == i }" (click)="clickedLink(i)" *ngFor="let link of links; let i = index">
+                <a href="{{link.url}}">{{link.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

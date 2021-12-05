@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-title">
+        <h2>pierwszy komponent</h2>
+    </div>
+    <div class="card-body">
+        <button class="btn btn-primary" (click)="toggleSecond()">{{showText}}</button>
+        <app-zad12-second [isActive]="isShowed" *ngIf="isShowed" (deactivation)="toggleSecond()">
+
+        </app-zad12-second>
+    </div>
+</div>
+
+

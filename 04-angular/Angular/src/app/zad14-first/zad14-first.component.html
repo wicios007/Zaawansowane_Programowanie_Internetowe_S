@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-title">
+        <h2>Zad14</h2>
+    </div>
+    <div class="card-body">
+        <button class="btn btn-primary" (click)="show()">Pokaż</button>
+        <p>{{receivedText}}</p>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <app-zad14-second (receivedText)="receivedText" *ngIf="isShowed"></app-zad14-second>
+    </div>
+</div>

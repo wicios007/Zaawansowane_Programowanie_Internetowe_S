@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem">
+    <div class="card-title">
+        <h2>Zad 1</h2>
+    </div>
+    <div class="card-body">
+    <button class="btn btn-primary" (click)="showName()">{{showBtn}}</button>
+    <p id="fullName" [ngClass]="{'text-size': textSize, 'text-color' : textColor}" *ngIf="show">{{fullName}}</p>
+
+    <button class="btn btn-primary" (click)="bigFont()">Czcionka 20px</button>
+    <button class="btn btn-primary" (click)="greenFont()">Zielona czcionka</button>
+</div>
+</div>
