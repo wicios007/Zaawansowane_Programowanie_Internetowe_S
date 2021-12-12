@@ -25,7 +25,8 @@ export class Zad1 extends React.Component<{}, State>{
         const newState = {
             firstName: "Wiktor", 
             lastName: "Kibało", 
-            isShowed : this.state.isShowed?false:true}
+            isShowed : this.state.isShowed?false:true
+        }
 
         this.setState(newState)
     }
