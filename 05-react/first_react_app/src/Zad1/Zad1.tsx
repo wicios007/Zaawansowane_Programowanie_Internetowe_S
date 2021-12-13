@@ -1,6 +1,8 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Row, Col } from 'react-bootstrap'
+
 
 type State = {
     firstName : string;
@@ -30,11 +32,14 @@ export class Zad1 extends React.Component<{}, State>{
 
         this.setState(newState)
     }
-
+//style={{width: '18rem'}}
     render(){
         return(
         <>
-        <Card style={{width: '18rem'}}>
+        <Row>
+        <Col></Col>
+        <Col>
+        <Card>
             <Card.Header>
                 Personalia
             </Card.Header>
@@ -48,7 +53,9 @@ export class Zad1 extends React.Component<{}, State>{
                 </div>
             </Card.Body>
         </Card>
-        
+        </Col>
+        <Col></Col>
+        </Row>
         </>
         )
     }
