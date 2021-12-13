@@ -18,6 +18,7 @@ export class Zad12c1Component implements OnInit {
   activateComponentTwo(){
     this.componentTwoActive = true;
   }
+  
   hideComponent(){
     this.componentTwoActive = false;
   }

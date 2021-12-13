@@ -1,5 +1,5 @@
 import { Observer } from "rxjs"
-
+import { map } from "rxjs";
 export class ClickObserver implements Observer<Event>{
 
     private id: string;
