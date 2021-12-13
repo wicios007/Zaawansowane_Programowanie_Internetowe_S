@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Second } from './Second/second.component'
+import {Col, Container, Navbar, Row} from "react-bootstrap";
 
 function App() {
   return (

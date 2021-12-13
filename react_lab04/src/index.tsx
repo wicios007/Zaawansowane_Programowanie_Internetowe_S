@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { First } from './First/first.component';
+import { Second} from './Second/second.component';
 
 ReactDOM.render(
-  <First></First>,
+  <Second></Second>,
   document.querySelector("div")
 );
 

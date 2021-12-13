@@ -1,19 +1,29 @@
 import React from "react";
 
-export class First extends React.Component{
-    firstName: string = " "
-    secondName: string = " "
+type State = {
+    firstName: string;
+    lastName: string;
+}
+
+export class First extends React.Component<{}, State>{
+    
+    constructor(props:{}) {
+        super(props);
+        this.state = {
+            firstName: " ",
+            lastName: " "
+        };
+    }
     
     method = () => {
-    this.firstName = "Daniel";
-    this.secondName = "Więcek";
-    console.log(this.firstName + this.secondName);
+        const newState = {firstName: "Daniel", lastName: "Więcek"};
+        this.setState(newState);
     }
 
     render() {
         return(
             <div>
-                <p>{this.firstName + this.secondName}</p>
+                <p>{this.state.firstName + ' ' + this.state.lastName}</p>
                 <button onClick={this.method}>Kliknij mnie!</button>
             </div>
         )
