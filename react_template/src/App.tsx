@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
+import { First } from './components/First';
+import { Zad2 } from './components/Zad2';
 
 function App() {
   return (
     <div className="App">
-      <div>Hello World</div>
+      <First/>
+      <Zad2/>
     </div>
   );
 }
