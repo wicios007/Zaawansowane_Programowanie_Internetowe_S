@@ -6,6 +6,7 @@ namespace webapi5.EntityFramework
 	public class AppDbContext : DbContext
 	{
 		public DbSet<Author> Authors { get; set; }
+		public DbSet<Email> Email { get; set; }
 		public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
 		{
 		}
@@ -17,10 +18,10 @@ namespace webapi5.EntityFramework
 				authorBuilder.Property(author => author.LastName).IsRequired();
 				// authorBuilder.Property(author => author.Emails);
 			});
-			modelBuilder.Entity<Email>(emailBuilder =>{
+			modelBuilder.Entity<Email>(emailBuilder =>
+			{
 				emailBuilder.Property(email => email.EmailString).IsRequired();
 				emailBuilder.Property(email => email.AuthorId).IsRequired();
-				emailBuilder.Property(email => email.Author).IsRequired();
 				emailBuilder.HasOne(a => a.Author)
 							.WithMany(e => e.Emails)
 							.OnDelete(DeleteBehavior.Cascade)
@@ -30,37 +31,37 @@ namespace webapi5.EntityFramework
 			modelBuilder.Entity<Author>().HasData(
 				new Author()
 				{
-					Id = 1,
+					AuthorId = 1,
 					FirstName = "Henryk",
 					LastName = "Sienkiewicz"
 				},
 
 				new Author()
 				{
-					Id = 2,
+					AuthorId = 2,
 					FirstName = "Władysław",
 					LastName = "Reymont"
 				},
 				new Author()
 				{
-					Id = 3,
+					AuthorId = 3,
 					FirstName = "Czesław",
 					LastName = "Miłosz"
 				},
 				new Author()
 				{
-					Id = 4,
+					AuthorId = 4,
 					FirstName = "Wisława",
 					LastName = "Szymborska"
 				}
 
 			);
 			modelBuilder.Entity<Email>().HasData(
-				new Email(){ Id = 1, EmailString = "h.sienkiewicz@example.com", AuthorId = 1 },
-				new Email(){ Id = 2, EmailString = "w.reymont@example.com", AuthorId = 2 },
-				new Email(){ Id = 3, EmailString = "c.milosz@example.com", AuthorId = 3 },
-				new Email(){ Id = 4, EmailString = "w.szymborska@example.com", AuthorId = 4 },
-				new Email(){ Id = 5, EmailString = "w.szymborska@dziala.com", AuthorId = 4 }
+				new Email() { EmailId = 1, EmailString = "h.sienkiewicz@example.com", AuthorId = 1 },
+				new Email() { EmailId = 2, EmailString = "w.reymont@example.com", AuthorId = 2 },
+				new Email() { EmailId = 3, EmailString = "c.milosz@example.com", AuthorId = 3 },
+				new Email() { EmailId = 4, EmailString = "w.szymborska@example.com", AuthorId = 4 },
+				new Email() { EmailId = 5, EmailString = "w.szymborska@dziala.com", AuthorId = 4 }
 			);
 		}
 	}

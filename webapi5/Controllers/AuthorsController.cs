@@ -6,15 +6,17 @@ using Microsoft.EntityFrameworkCore;
 using webapi5.EntityFramework;
 using webapi5.models;
 
-namespace webapi5.Controllers{
+namespace webapi5.Controllers
+{
 
 	[ApiController]
 	[Route("[controller]")]
 	public class AuthorsController : ControllerBase
 	{
 		private AppDbContext context;
-		
-		public AuthorsController(AppDbContext context){
+
+		public AuthorsController(AppDbContext context)
+		{
 			this.context = context;
 		}
 
@@ -23,11 +25,13 @@ namespace webapi5.Controllers{
 		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
 		public async Task<IActionResult> GetAuthors()
 		{
-			try{
-				var list = await context.Authors.ToListAsync();
+			try
+			{
+				var list = await context.Authors.Include(e => e.Emails).ToListAsync();
 				return Ok(list);
 			}
-			catch{
+			catch
+			{
 				return this.Problem(
 					detail: "Wystąpił błąd podczas realizacji tego żądania",
 					title: "Błąd"
@@ -36,13 +40,16 @@ namespace webapi5.Controllers{
 		}
 
 		[HttpGet("paginated_result")]
-		public async Task<IActionResult> GetPaginatedData(int pageSize, int pageNumber){
-			try{
-				
-				var authors = await context.Authors.OrderBy(a => a.Id).Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync();
+		public async Task<IActionResult> GetPaginatedData(int pageSize, int pageNumber)
+		{
+			try
+			{
+
+				var authors = await context.Authors.Include(e => e.Emails).OrderBy(a => a.AuthorId).Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync();
 				return Ok(authors);
 			}
-			catch{
+			catch
+			{
 				return this.Problem(
 					detail: "Wystąpił błąd podczas realizacji tego żądania",
 					title: "Błąd"
@@ -51,10 +58,12 @@ namespace webapi5.Controllers{
 		}
 
 		[HttpGet("{id}", Name = "GetAuthor")]
-		public async Task<IActionResult> GetAuthor(int id){
-			try{
-				var author = await context.Authors.SingleOrDefaultAsync(a=>a.Id == id);
-				if(author == null)
+		public async Task<IActionResult> GetAuthor(int id)
+		{
+			try
+			{
+				var author = await context.Authors.Include(e => e.Emails).SingleOrDefaultAsync(a => a.AuthorId == id);
+				if (author == null)
 					return NotFound($"Nie znaleziono autor o id = {id}");
 				else
 					return Ok(author);
@@ -68,23 +77,25 @@ namespace webapi5.Controllers{
 			}
 		}
 		// [HttpGet("{filter}={searchString}", Name = "GetFilteredAuthor")]
-		[HttpGet("filtered_authors", Name="GetFilteredAuthors")]
-		public async Task<IActionResult> GetFilteredAuthor(string filter, string searchString){
-			try{
-				// DbSet<Author> authors;
-				switch(filter){
+		[HttpGet("filtered_authors", Name = "GetFilteredAuthors")]
+		public async Task<IActionResult> GetFilteredAuthor(string filter, string searchString)
+		{
+			try
+			{
+				switch (filter)
+				{
 					case "firstname":
-						var authorsFirstName = await context.Authors.Where(a => a.FirstName.Contains(searchString)).ToListAsync();
+						var authorsFirstName = await context.Authors.Include(e => e.Emails).Where(a => a.FirstName.Contains(searchString)).ToListAsync();
 						return Ok(authorsFirstName);
 					case "lastname":
-						var authorsLastName = await context.Authors.Where(a=>a.LastName.Contains(searchString)).ToListAsync();
+						var authorsLastName = await context.Authors.Include(e => e.Emails).Where(a => a.LastName.Contains(searchString)).ToListAsync();
 						return Ok(authorsLastName);
 					case "email":
 						var authorsEmail = await context.Authors.Include(email => email.Emails.Where(e => e.EmailString.Contains(searchString))).ToListAsync();
 						return Ok(authorsEmail);
 					default:
-						var authors = await context.Authors.ToListAsync();
-						return Ok(authors);				
+						var authors = await context.Authors.Include(e => e.Emails).ToListAsync();
+						return Ok(authors);
 				}
 			}
 			catch
@@ -97,15 +108,18 @@ namespace webapi5.Controllers{
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> InsertAuthor([FromBody] Author author){
-			if(!ModelState.IsValid)
+		public async Task<IActionResult> InsertAuthor([FromBody] Author author)
+		{
+			if (!ModelState.IsValid)
 				return BadRequest();
-			try{
+			try
+			{
 				context.Authors.Add(author);
 				await context.SaveChangesAsync();
-				return CreatedAtAction("GetAuthor", new {id = author.Id}, author);
+				return CreatedAtAction("GetAuthor", new { id = author.AuthorId }, author);
 			}
-			catch{
+			catch
+			{
 				return this.Problem(
 					detail: "Wystąpił błąd podczas realizacji tego żądania",
 					title: "Błąd"
@@ -113,10 +127,13 @@ namespace webapi5.Controllers{
 			}
 		}
 		[HttpPut]
-		public async Task<IActionResult> EditAuthor(int id, Author author){
-			try{
-				var authorToUpdate = await context.Authors.SingleOrDefaultAsync(x => x.Id == id);
-				if(authorToUpdate != null){
+		public async Task<IActionResult> EditAuthor(int id, Author author)
+		{
+			try
+			{
+				var authorToUpdate = await context.Authors.SingleOrDefaultAsync(x => x.AuthorId == id);
+				if (authorToUpdate != null)
+				{
 					authorToUpdate.FirstName = author.FirstName;
 					authorToUpdate.LastName = author.LastName;
 					authorToUpdate.Emails = author.Emails;
@@ -126,26 +143,31 @@ namespace webapi5.Controllers{
 				}
 				else return NotFound($"Nie znaleziono autora o id = {id}");
 			}
-			catch{
+			catch
+			{
 				return this.Problem(
 					detail: "Wystąpił błąd podczas realizacji tego żądania",
 					title: "Błąd"
-				);	
+				);
 			}
 		}
 
 		[HttpDelete]
-		public async Task<IActionResult> DeleteAuthor(int id){
-			try{
-				var authorToRemove = await context.Authors.SingleOrDefaultAsync(x => x.Id == id);
-				if(authorToRemove != null){
+		public async Task<IActionResult> DeleteAuthor(int id)
+		{
+			try
+			{
+				var authorToRemove = await context.Authors.SingleOrDefaultAsync(x => x.AuthorId == id);
+				if (authorToRemove != null)
+				{
 					context.Authors.Remove(authorToRemove);
 					await context.SaveChangesAsync();
 					return NoContent();
 				}
 				else return NotFound($"Nie znaleziono autora o id = {id}");
 			}
-			catch{
+			catch
+			{
 				return this.Problem(
 					detail: "Wystąpił błąd podczas realizacji tego żądania",
 					title: "Błąd"
