@@ -21,7 +21,10 @@ export class Zad4 extends React.Component<{}, State> {
     render() {
         return (
             <>
-                <Card style={{ width: "18rem" }}>
+            <Row>
+                <Col></Col>
+                <Col>
+                <Card>
                     <Card.Header>
                         <p>Zad4</p>
                     </Card.Header>
@@ -51,6 +54,9 @@ export class Zad4 extends React.Component<{}, State> {
                         </Row>
                     </Card.Footer>
                 </Card>
+                </Col>
+                <Col></Col>
+            </Row>
             </>
         )
     }
