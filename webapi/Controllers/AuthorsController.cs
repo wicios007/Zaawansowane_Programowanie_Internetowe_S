@@ -166,13 +166,13 @@ namespace webapi.Controllers
         {
             try
             {
-                var baseQuery = await dbContext.Authors.ToListAsync();
-                var authors = baseQuery
+                var authors = await dbContext.Authors
+                    .OrderBy(c => c.Id)
                     .Skip(pageSize * (pageNumber - 1))
                     .Take(pageSize)
-                    .ToList();
+                    .ToListAsync();
+                return Ok(authors);
 
-                    return Ok(authors);
             }
             catch
             {
