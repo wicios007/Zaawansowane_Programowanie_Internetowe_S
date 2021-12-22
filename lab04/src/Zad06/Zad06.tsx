@@ -55,49 +55,36 @@ export class Zad06 extends React.Component<{}, State> {
                                 ></img>
                             </tr>
                         }
-                        {/* {this.images.map(
-                        (l, idx) => 
-                        {   
-                            this.state.index === idx ?
-                            <tr><img src={l.url} alt={l.name}></img></tr>
-                            : ""
-                        }
-                    )
-                    } */}
                     </tbody>
                 </Table>
-                {   this.state.index > 0 &&
+                {this.state.index > 0 ? 
                     <Button onClick={this.prevImg}>Poprzednie</Button>
+                    : null
                 }
-                { this.state.index < this.state.images.length-1 &&
-                <Button onClick={this.nextImg}>Następne</Button>
+                {this.state.index < this.state.images.length - 1 ?
+                    <Button onClick={this.nextImg}>Następne</Button>
+                    : null
                 }
             </>
         );
     }
 
     nextImg = () => {
-        let newState = { ...this.state, index: this.state.index < this.state.images.length-1 ? this.state.index+1 : this.state.index}
-        this.setState(newState)
-    }
+        let newState = {
+            ...this.state,
+            index:
+                this.state.index < this.state.images.length - 1
+                    ? this.state.index + 1
+                    : this.state.index,
+        };
+        this.setState(newState);
+    };
     prevImg = () => {
-        let newState = { ...this.state, index: this.state.index > 0 ? this.state.index-1 : this.state.index}
-        this.setState(newState)
-    }
-
-    // nextImg = () => {
-    //     this.setState(prevState => ({
-    //         images: prevState.images,
-    //         index: prevState.index+1,
-    //     })
-    // }
-    // prevImg() {
-    //     let items = [...this.state.images];
-    //     items[this.state.index] = this.state.index + 1;
-    //     const newState = {
-    //         images: this.state.images,
-    //         index: this.state.index - 1,
-    //     };
-    //     this.setState(newState);
-    // }
+        let newState = {
+            ...this.state,
+            index:
+                this.state.index > 0 ? this.state.index - 1 : this.state.index,
+        };
+        this.setState(newState);
+    };
 }
