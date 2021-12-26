@@ -27,7 +27,9 @@ namespace webapi.Controllers
         {
             try
             {
-                var authors = await dbContext.Authors.IgnoreQueryFilters().ToListAsync();
+                var authors = await dbContext.Authors
+                    .Include(c => c.Emails)
+                    .ToListAsync();
                 return Ok(authors);
             }
             catch
@@ -43,7 +45,7 @@ namespace webapi.Controllers
         {
             try
             {
-                var author = await dbContext.Authors.FirstOrDefaultAsync(c => c.Id == id);
+                var author = await dbContext.Authors.Include(c => c.Emails).FirstOrDefaultAsync(c => c.Id == id);
                 if (author is null)
                 {
                     return NotFound($"Nie znaleziono autora o id = {id}");
@@ -91,7 +93,7 @@ namespace webapi.Controllers
                 {
                     return NotFound("Autor nie został znaleziony");
                 }
-                autor.Email = author.Email;
+                //autor.Email = author.Email;
                 autor.FirstName = author.FirstName;
                 autor.LastName = author.LastName;
                 await dbContext.SaveChangesAsync();
@@ -115,8 +117,9 @@ namespace webapi.Controllers
                 
                 switch(filterBy){
                     case "email":
-                        var authorsEmail = await dbContext.Authors.Where(c => c.Email.Contains(filter)).ToListAsync();
-                        return Ok(authorsEmail);
+                        //var authorsEmail = await dbContext.Authors.Where(c => c.Email.Contains(filter)).ToListAsync();
+                        //return Ok(authorsEmail);
+                        return Ok();
                     case "firstname":
                         var authorsFirst = await dbContext.Authors.Where(c => c.FirstName.Contains(filter)).ToListAsync();
                         return Ok(authorsFirst);
