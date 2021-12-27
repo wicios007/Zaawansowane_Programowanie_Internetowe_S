@@ -1,5 +1,4 @@
 import React from "react";
-import { AppBar, Box, Toolbar, Typography, SxProps } from "@mui/material";
 import "./Zad2.css"
 
 type Hyperlink =
