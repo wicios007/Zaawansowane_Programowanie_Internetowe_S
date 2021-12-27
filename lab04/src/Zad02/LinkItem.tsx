@@ -1,9 +1,7 @@
 import React from "react";
 import { Button, ListGroup } from "react-bootstrap";
-import { useState } from "react";
 import "./Zad02.css";
 import { DeleteItem } from "./DeleteItem";
-import { render } from "@testing-library/react";
 
 type Properties = {
     link: {
@@ -16,13 +14,24 @@ type Properties = {
     showDetails: (index: number) => void;
     hideLink: (index: number) => void;
 };
-type State = {};
-export class LinkItem extends React.Component<Properties> {
+type State = {
+    deleteConfirmation: boolean;
+};
+export class LinkItem extends React.Component<Properties, State> {
+
+    constructor(props: Properties){
+        super(props)
+        this.state = {
+            deleteConfirmation: false
+        }
+    }
+
     render() {
         // const deleteItemProps = {
         //     index: this.props.index,
         //     hideLink: this.props.hideLink
         // }
+
         return (
             <>
                 <ListGroup.Item as="li" action href={this.props.link.url}>
@@ -31,7 +40,7 @@ export class LinkItem extends React.Component<Properties> {
                     <Button
                         className="float-end"
                         onClick={() => {
-                            this.props.hideLink(this.props.index);
+                            this.changeConfirmationVisibility();
                         }}
                     >
                         Usuń
@@ -47,12 +56,15 @@ export class LinkItem extends React.Component<Properties> {
                     <br/>
                     <br/>
                     <br/>
-                    <DeleteItem
+                    {this.state.deleteConfirmation && <DeleteItem changeConfirmationVisibility={this.changeConfirmationVisibility}
                         hideLink={this.props.hideLink}
                         index={this.props.index}
-                    ></DeleteItem>
+                    ></DeleteItem>}
                 </ListGroup.Item>
             </>
         );
+    }
+    changeConfirmationVisibility = () => {
+        this.setState(state => ({...state, deleteConfirmation: !state.deleteConfirmation }) )
     }
 }

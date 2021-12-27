@@ -24,7 +24,6 @@ export class Zad02 extends React.Component<{}, State>{
             showDetails: false,
             detailsIndex: 0
         }
-
     }
     
     render(){
