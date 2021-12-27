@@ -1,0 +1,15 @@
+.pictures.thumbnails > img {
+	max-width: 100px;
+	max-height: 100px;
+	top: 50%;
+}
+.pictures {
+	width: 50%;
+    float: left;
+}
+.selected-picture {
+	background-color: green;
+}
+.pictures.thumbnails {
+	transform: translate(0, 75%);
+}

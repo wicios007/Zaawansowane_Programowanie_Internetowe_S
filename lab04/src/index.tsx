@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import { Zad06 } from './Zad06/Zad06';
 import { Zad09 } from './Zad09/Zad09';
 import { Zad11 } from './Zad011/Zad11';
+import { Zad14 } from './Zad14/Zad14';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,6 +25,8 @@ ReactDOM.render(
     <Zad09 />
     <br />
     <Zad11 />
+    <br/>
+    <Zad14></Zad14>
   </React.StrictMode>,
   document.getElementById('root')
 );

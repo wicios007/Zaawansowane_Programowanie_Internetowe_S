@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, ListGroup } from "react-bootstrap"
+import { ListGroup } from "react-bootstrap"
+import { LinkItem } from "./LinkItem";
 import "./Zad02.css"
 import { Zad02details } from "./Zad02details";
 
@@ -31,8 +32,10 @@ export class Zad02 extends React.Component<{}, State>{
             <ListGroup as="ul">
             {this.links.map(
                 (l, index) => 
-                <ListGroup.Item as="li" action href={l.url} onClick={() => {this.showDetails(index)}}><a href={l.url}>{l.name}</a><Button className="float-end" onClick={() => {this.hideLink(index)}}>Usuń</Button></ListGroup.Item>
                 
+                !l.hidden &&
+                <LinkItem link={l} index={index} showDetails={this.showDetails} hideLink={this.hideLink}></LinkItem>
+                // <ListGroup.Item as="li" action href={l.url} onClick={() => {this.showDetails(index)}}><a href={l.url}>{l.name}</a><Button className="float-end" onClick={() => {this.hideLink(index)}}>Usuń</Button></ListGroup.Item>
                 )}
             </ListGroup>
             { this.state.showDetails &&
@@ -42,10 +45,12 @@ export class Zad02 extends React.Component<{}, State>{
     }
 
     showDetails = (index: number) => {
-        this.setState(state => ({...state, showDetails: true, detailsIndex: index}))
+        this.setState(state => ({...state, showDetails: !state.showDetails, detailsIndex: index}))
     }
     hideLink = (index: number) =>{
         this.links[index].hidden = true;
-        this.setState(state => ({...state}));
+        // this.state.detailsIndex == index ? this.state.showDetails = false : null
+        this.setState(state => ({...state, showDetails: false }))
+        console.log(this.state.showDetails)
     }
 }
