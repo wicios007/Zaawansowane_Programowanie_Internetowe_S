@@ -12,6 +12,7 @@ export let DeleteItem = (props: Properties) => (
         <Button className="float-end" onClick={() => {props.changeConfirmationVisibility()}}>Nie</Button>
         <Button
             className="float-end"
+            variant="danger"
             onClick={() => {
                 props.hideLink(props.index);
             }}

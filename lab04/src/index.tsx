@@ -12,6 +12,7 @@ import { Zad11 } from "./Zad011/Zad11";
 import { Zad14 } from "./Zad14/Zad14";
 import { Zad16 } from "./Zad16/Zad16";
 import { Card, CardContent, CardHeader } from "@mui/material";
+import { Zad17 } from "./Zad17/Zad17";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -70,6 +71,13 @@ ReactDOM.render(
             <CardHeader title="Zad16"></CardHeader>
             <CardContent>
                 <Zad16 />
+            </CardContent>
+        </Card>
+        <br />
+        <Card>
+            <CardHeader title="Zad17"></CardHeader>
+            <CardContent>
+                <Zad17 />
             </CardContent>
         </Card>
     </React.StrictMode>,

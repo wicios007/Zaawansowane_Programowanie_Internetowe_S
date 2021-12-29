@@ -2,27 +2,29 @@ import React from "react";
 import { Button, ListGroup } from "react-bootstrap";
 import "./Zad02.css";
 import { DeleteItem } from "./DeleteItem";
+import { Link } from "./Link";
+import { AddEditLink } from "./AddEditLink";
 
 type Properties = {
-    link: {
-        name: string;
-        url: string;
-        description: string;
-        hidden: boolean;
-    };
+    link: Link,
     index: number;
     showDetails: (index: number) => void;
     hideLink: (index: number) => void;
+    editLink: (link: Link, index: number) => void;
 };
+
 type State = {
     deleteConfirmation: boolean;
+    editItemVisibility: boolean;
 };
+
 export class LinkItem extends React.Component<Properties, State> {
 
     constructor(props: Properties){
         super(props)
         this.state = {
-            deleteConfirmation: false
+            deleteConfirmation: false,
+            editItemVisibility: false,
         }
     }
 
@@ -39,6 +41,7 @@ export class LinkItem extends React.Component<Properties, State> {
 
                     <Button
                         className="float-end"
+                        variant="outline-danger"
                         onClick={() => {
                             this.changeConfirmationVisibility();
                         }}
@@ -55,16 +58,35 @@ export class LinkItem extends React.Component<Properties, State> {
                     </Button>
                     <br/>
                     <br/>
+                    <Button
+                        className="float-end"
+                        onClick={() => {
+                            this.changeEditVisibility();
+                        }}
+                    >
+                        Edytuj
+                    </Button>
+                    <br/>
                     <br/>
                     {this.state.deleteConfirmation && <DeleteItem changeConfirmationVisibility={this.changeConfirmationVisibility}
                         hideLink={this.props.hideLink}
                         index={this.props.index}
                     ></DeleteItem>}
+
+                    {this.state.editItemVisibility && <AddEditLink title="Edytuj link" link={this.props.link} addEditLink={this.editLink} changeEditVisibility={this.changeEditVisibility}></AddEditLink>}
                 </ListGroup.Item>
+
             </>
         );
     }
     changeConfirmationVisibility = () => {
         this.setState(state => ({...state, deleteConfirmation: !state.deleteConfirmation }) )
     }
+    changeEditVisibility = () => {
+        this.setState(state => ({...state, editItemVisibility: !state.editItemVisibility }) )
+    }
+    editLink = (link: Link) => {
+        this.props.editLink(link, this.props.index);
+    }
+
 }

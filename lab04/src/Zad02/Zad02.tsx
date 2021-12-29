@@ -1,55 +1,108 @@
+import { linkSync, stat } from "fs";
 import React from "react";
-import { ListGroup } from "react-bootstrap"
+import { ListGroup, Button } from "react-bootstrap";
+import { NewLineKind } from "typescript";
+import { AddEditLink } from "./AddEditLink";
+import { Link } from "./Link";
 import { LinkItem } from "./LinkItem";
-import "./Zad02.css"
+import "./Zad02.css";
 import { Zad02details } from "./Zad02details";
 
-type State ={
-    showDetails: boolean,
-    detailsIndex: number
-}
-export class Zad02 extends React.Component<{}, State>{
-
-    links = [
-        { name: "Google", url: "http://www.google.com", description: "Strona pozwalająca na wyszukiwanie w internecie", hidden: false },
-        { name: "StackOverflow", url: "http://www.stackoverflow.com", description: "Strona, na której można poszukać informacji na problemy programistyczne", hidden: false },
-        { name: "Politechnika Częstochowska", url: "https://pcz.pl", description: "Główna strona Politechniki Częstochowskiej", hidden: false },
-        { name: "PCz WIMiI", url: "https://wimii.pcz.pl", description: "Strona Wydziału Inżynierii Mechanicznej i Informatyki Politechniki Częstochowskiej", hidden: false },
-        { name: "PCz e-learning", url: "https://moodle2021.pcz.pl/", description: "Strona e-learningowa Politechniki Częstochowskiej", hidden: false }
-    ]
-
-    constructor(props: {}){
+type State = {
+    showDetails: boolean;
+    detailsIndex: number;
+    addNewLinkVisibility: boolean;
+    links: Link[];
+};
+export class Zad02 extends React.Component<{}, State> {
+    constructor(props: {}) {
         super(props);
         this.state = {
             showDetails: false,
-            detailsIndex: 0
-        }
+            addNewLinkVisibility: false,
+            detailsIndex: 0,
+            links: [
+                new Link(
+                    "Google",
+                    "http://www.google.com",
+                    "Strona pozwalająca na wyszukiwanie w internecie"
+                ),
+                new Link(
+                    "StackOverflow",
+                    "http://www.stackoverflow.com",
+                    "Strona, na której można poszukać informacji na problemy programistyczne"
+                ),
+                new Link(
+                    "Politechnika Częstochowska",
+                    "https://pcz.pl",
+                    "Główna strona Politechniki Częstochowskiej"
+                ),
+                new Link(
+                    "PCz WIMiI",
+                    "https://wimii.pcz.pl",
+                    "Strona Wydziału Inżynierii Mechanicznej i Informatyki Politechniki Częstochowskiej"
+                ),
+                new Link(
+                    "PCz e-learning",
+                    "https://moodle2021.pcz.pl/",
+                    "Strona e-learningowa Politechniki Częstochowskiej"
+                ),
+            ],
+        };
     }
-    
-    render(){
-        return(<>
-            <ListGroup as="ul">
-            {this.links.map(
-                (l, index) => 
-                
-                !l.hidden &&
-                <LinkItem link={l} index={index} showDetails={this.showDetails} hideLink={this.hideLink}></LinkItem>
-                // <ListGroup.Item as="li" action href={l.url} onClick={() => {this.showDetails(index)}}><a href={l.url}>{l.name}</a><Button className="float-end" onClick={() => {this.hideLink(index)}}>Usuń</Button></ListGroup.Item>
-                )}
-            </ListGroup>
-            { this.state.showDetails &&
-                <Zad02details text={this.links[this.state.detailsIndex].description}></Zad02details>
-            }
-        </>)
+
+    render() {
+        return (
+            <>
+                <Button className="float-left" onClick={this.changeAddNewLinkVisibility}>Dodaj</Button>
+                {this.state.addNewLinkVisibility && <AddEditLink
+                    title="Dodaj nowy link"
+                    link={null}
+                    addEditLink={this.addLink}
+                    changeEditVisibility={this.changeAddNewLinkVisibility}
+                ></AddEditLink>}
+                <ListGroup as="ul">
+                    {this.state.links.map(
+                        (l, index) =>
+                            !l.hidden && (
+                                <LinkItem
+                                    link={l}
+                                    index={index}
+                                    showDetails={this.showDetails}
+                                    hideLink={this.hideLink}
+                                    editLink={this.editLink}
+                                ></LinkItem>
+                            )
+                    )}
+                    {this.state.showDetails && (
+                        <Zad02details link={this.state.links[this.state.detailsIndex]}></Zad02details>
+                    )}
+                </ListGroup>
+            </>
+        );
     }
 
     showDetails = (index: number) => {
-        this.setState(state => ({...state, showDetails: !state.showDetails, detailsIndex: index}))
-    }
-    hideLink = (index: number) =>{
-        this.links[index].hidden = true;
-        // this.state.detailsIndex == index ? this.state.showDetails = false : null
-        this.setState(state => ({...state, showDetails: false }))
-        console.log(this.state.showDetails)
+        this.setState((state) => ({
+            ...state,
+            showDetails: !state.showDetails,
+            detailsIndex: index,
+        }));
+    };
+    hideLink = (index: number) => {
+        this.state.links[index].hidden = true;
+        this.setState((state) => ({ ...state, showDetails: false }));
+        console.log(this.state.showDetails);
+    };
+    addLink = (link: Link) => {
+        this.setState((state) => ({ ...state, links: [...state.links, link], addNewLinkVisibility: false }));
+    };
+    editLink = (link: Link, index: number) => {
+        let newLinks = this.state.links;
+        newLinks[index] = link; //{ name: link.name, url: link.url, description: link.description, hidden: false}
+        this.setState((state) => ({ ...state, links: newLinks }));
+    };
+    changeAddNewLinkVisibility = () => {
+        this.setState(state => ({...state, addNewLinkVisibility: !state.addNewLinkVisibility }) )
     }
 }

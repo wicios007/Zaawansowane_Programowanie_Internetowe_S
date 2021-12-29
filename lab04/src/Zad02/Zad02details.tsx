@@ -1,17 +1,18 @@
+import { Card } from "@mui/material";
 import React from "react";
-import "./Zad02.css"
+import { Link } from "./Link";
+import "./Zad02.css";
 
-type Properties ={
-	text: string,
-}
+type Properties = {
+    link: Link;
+};
 
-export class Zad02details extends React.Component<Properties>{
-
-
-    render(){
-        return(<>
-            {this.props.text}
-        </>)
+export class Zad02details extends React.Component<Properties> {
+    render() {
+        return (
+            <>
+                <Card>{this.props.link.description}</Card>
+            </>
+        );
     }
-
 }
