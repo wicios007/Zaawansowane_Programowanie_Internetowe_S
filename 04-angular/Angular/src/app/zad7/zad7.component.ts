@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Zad7Service } from '../services/zad7.service';
 
 @Component({
   selector: 'app-zad7',
@@ -7,22 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Zad7Component implements OnInit {
   counter : number
-  constructor() { this.counter = 0 }
+  constructor(private srv : Zad7Service) { this.counter = srv.counter }
 
   ngOnInit(): void {
   }
 
   plusOne(){
-    this.counter++
+   this.counter = this.srv.plus(1)
   }
   minusOne(){
-    this.counter--
+    // this.counter = this.counter--
+    this.counter = this.srv.minus(1)
   }
   plusTwo(){
-    this.counter += 2
+    //this.counter += 2
+    this.counter = this.srv.plus(1)
   }
   minusTwo(){
-    this.counter -= 2
+    //this.counter -= 2
+    this.counter = this.srv.minus(2)
   }
 
 

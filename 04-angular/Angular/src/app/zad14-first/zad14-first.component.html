@@ -4,11 +4,12 @@
     </div>
     <div class="card-body">
         <button class="btn btn-primary" (click)="show()">Pokaż</button>
-        <p>{{receivedText}}</p>
+        <p>{{sendText}}</p>
     </div>
 </div>
 <div class="card">
     <div class="card-body">
-        <app-zad14-second (receivedText)="receivedText" *ngIf="isShowed"></app-zad14-second>
+        <!-- tutaj jest przyklad jak odebrac text od dziecka do rodzica; nalezy wywolac funkcje z eventem dla odpowiedniej property wysylanej od childa; -->
+        <app-zad14-second (sendText)="showText($event)" *ngIf="isShowed"></app-zad14-second>
     </div>
 </div>

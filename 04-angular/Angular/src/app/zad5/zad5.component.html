@@ -1,12 +1,84 @@
-<div class="card" style="width: 18rem">
-    <div class="card-title">
-        <h2>Linki zad2</h2>
-    </div>
-    <div class="card-body">
-        <ul class="list-group">
-            <li [ngClass]="{'list-group-item':true, 'list-group-item-action':true, 'active': index == i }" (click)="clickedLink(i)" *ngFor="let link of links; let i = index">
-                <a href="{{link.url}}">{{link.name}}</a>
-            </li>
-        </ul>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 18rem">
+                <div class="card-title">
+                    <h2>Linki zad2</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li [ngClass]="{'list-group-item':true, 'list-group-item-action':true, 'active': index == i }"
+                            *ngFor="let link of linksService.links; let i = index">
+                            <div class="row">
+                                <div class="col">
+                                    <div (click)="clickedLink(i)"><a href="{{link.url}}">{{link.name}}</a></div>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-danger" (click)="deleteLinkBtn(i)"><i class="bi bi-trash"></i></button>
+                                    <button class="btn btn-primary" (click)="editLinkBtn(i)"><i class="bi bi-file-earmark-richtext-fill"></i></button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary" (click)="showHideAddForm()">{{showHideAddButtonText}}</button>
+                <div class="card-body" *ngIf="showHideAddButtonBoolean">
+                    <form [formGroup]="formEdit" (ngSubmit)="onSubmitAdd()">
+                        <div class="form-group">
+                            <label for="name">Nazwa</label>
+                            <input type="text" class="form-control" id="name" [formControl]="$any(form).controls['name']">
+                            <div *ngIf="$any(form).controls['name'].hasError('required') && $any(form).controls['name'].touched" class="text-danger support-text">
+                                Nazwa jest wymagana
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="url">Link</label>
+                            <input type="text" class="form-control" id="url" [formControl]="$any(form).controls['url']">
+                            <div *ngIf="$any(form).controls['url'].hasError('required') && $any(form).controls['url'].touched" class="text-danger support-text">
+                                Link jest wymagany
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Opis</label>
+                            <textarea type="text" class="form-control" id="description" [formControl]="$any(form).controls['description']"></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit" [disabled]="!$any(form).valid">Dodaj</button>
+                    </form>
+                </div>
+                <div class="card-body" *ngIf="showHideEditButtonBoolean">
+                    <form [formGroup]="formEdit" (ngSubmit)="onSubmitEdit()">
+                        <div class="form-group">
+                            <label for="name">Nazwa</label>
+                            <input type="text" class="form-control" id="name" [formControl]="$any(formEdit).controls['name']" value="linkToEdit.name">
+                            <div *ngIf="$any(formEdit).controls['name'].hasError('required') && $any(formEdit).controls['name'].touched" class="text-danger support-text">
+                                Nazwa jest wymagana
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="url">Link</label>
+                            <input type="text" class="form-control" id="url" [formControl]="$any(formEdit).controls['url']">
+                            <div *ngIf="$any(formEdit).controls['url'].hasError('required') && $any(formEdit).controls['url'].touched" class="text-danger support-text">
+                                Link jest wymagany
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Opis</label>
+                            <textarea type="text" class="form-control" id="description" [formControl]="$any(formEdit).controls['description']"></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit" [disabled]="!$any(formEdit).valid">Edytuj</button>
+                        <button class="btn btn-primary" type="submit" (click)="hideEditForm()">Anuluj</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <app-zad5-details [linkFromParent]="sent" *ngIf="detailsShow"></app-zad5-details>
+                    <app-zad5-delete (deleteLinkEmit) = "deleteLinkReceive($event)" (deleteLinkBoolean)="hideDeleteComponent($event)" [linkToDelete]="sent" *ngIf="deleteShow"></app-zad5-delete>
+                </div>
+            </div>
+            
+        </div>
     </div>
 </div>

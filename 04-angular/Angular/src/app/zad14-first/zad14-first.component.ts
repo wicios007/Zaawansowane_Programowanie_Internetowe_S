@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 })
 export class Zad14FirstComponent implements OnInit {
 
-  @Input() receivedText : string = ""
+  @Input() sendText : string = ""
   isShowed : boolean = false
   constructor() { }
 
@@ -17,5 +17,11 @@ export class Zad14FirstComponent implements OnInit {
 
   show(){
     this.isShowed = !this.isShowed
+  }
+
+  showText(evt: any){
+    console.log(evt)
+    this.sendText = evt
+    this.isShowed = false
   }
 }

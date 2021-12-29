@@ -1,9 +1,10 @@
 <div class="card" style="width: 18rem">
-    <div class="card-title">
+    <div class="card-title text-center">
         <h2>Zad 8</h2>
     </div>
     <div class="card-body">
-        <p>{{counter}}</p>
+        <p>From parent: {{counter}}</p>
+        <p>From service: <app-zad7-second></app-zad7-second> </p>
         <ul class="list-group">
             <li class="list-group-item"><button class="btn btn-primary" (click)="minusOne()">-1</button> <button
                     class="btn btn-primary" (click)="plusOne()">+1</button></li>

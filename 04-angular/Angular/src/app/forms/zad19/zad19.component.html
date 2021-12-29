@@ -1,0 +1,34 @@
+<!-- 
+<mat-card>
+    <mat-card-title>
+        Zad 19
+    </mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="form">
+            <div>
+                <mat-form-field class="input-full-width" appearance="fill">
+                    <mat-label>Input</mat-label>
+                    <input matInput type="text" [formControl]="$any(form).controls['input1']">
+                </mat-form-field>
+            </div>
+        </form>
+        <div>{{this.form.controls['input1'].value}}</div>
+    </mat-card-content>
+</mat-card>
+ -->
+<div class="card">
+    <div class="card-title">
+        Zad19
+    </div>
+    <div class="card-body">
+        <form [formGroup]="form">
+            <div class="form-group">
+                <label for="input1">Input</label>
+                <input type="text" class="form-control" id="input1" [formControl]="$any(form).controls['input1']">
+            </div>
+        </form>
+    </div>
+    <div class="card-body"> <!-- dwa razy card body? kompiluje sie i dziala, ale czy tak jest poprawnie tego nie wiem  -->
+        <div>{{this.form.controls['input1'].value}}</div>
+    </div>
+</div>
