@@ -1,7 +1,5 @@
-import { linkSync, stat } from "fs";
 import React from "react";
 import { ListGroup, Button } from "react-bootstrap";
-import { NewLineKind } from "typescript";
 import { AddEditLink } from "./AddEditLink";
 import { Link } from "./Link";
 import { LinkItem } from "./LinkItem";
@@ -92,7 +90,6 @@ export class Zad02 extends React.Component<{}, State> {
     hideLink = (index: number) => {
         this.state.links[index].hidden = true;
         this.setState((state) => ({ ...state, showDetails: false }));
-        console.log(this.state.showDetails);
     };
     addLink = (link: Link) => {
         this.setState((state) => ({ ...state, links: [...state.links, link], addNewLinkVisibility: false }));
