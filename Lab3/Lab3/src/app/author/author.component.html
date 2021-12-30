@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col">
+    <section class="card m-4">
+      <div
+        class="card-header d-flex justify-content-between align-items-center"
+      >
+        <span class="card-title"> Lista autorów </span>
+        <button class="btn btn-primary" (click)="onClick()">{{ title }}</button>
+      </div>
+      <div class="card-body">
+        <app-search
+          [resultsCount]="numberOfAuthors"
+          (search)="change($event)"
+        ></app-search>
+
+        <ul class="list-group" *ngIf="isListShown">
+          <li
+            class="list-group-item"
+            [class.active]="author === selectedAuthor"
+            *ngFor="let author of displayedAuthors; let idx = index"
+            (click)="changeAuthor(author)"
+          >
+            {{ idx + 1 }}. {{ author.name }} {{ author.lastName }} ({{
+              author.email
+            }})
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="col">
+      <app-authors-list
+        *ngIf="selectedAuthor"
+        [author]="selectedAuthor"
+        (closed)="authorClosed()"
+      >
+      </app-authors-list>
+      <app-add-author
+        (closed)="formClosed($event)"
+        *ngIf="isFormShown"
+      ></app-add-author>
+    </div>
+  </div>
+</div>

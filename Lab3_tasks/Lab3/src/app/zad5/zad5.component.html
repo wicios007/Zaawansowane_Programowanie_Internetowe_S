@@ -1,0 +1,38 @@
+<div class="card m-4">
+  <div class="card-header">
+    <span class="card-title"><h5>Lista linków</h5></span>
+    <app-zad21 [lista]="links"> </app-zad21>
+  </div>
+  <div class="card-body">
+    <ul class="list-group">
+      <li
+        [ngClass]="{
+          'list-group-item': true,
+          'list-group-item-action': true,
+          activeLinks: index == i
+        }"
+        (click)="clickedLink(i)"
+        *ngFor="let link of links; let i = index"
+      >
+        <button class="btn btn-primary" (click)="onClick()">
+          {{ delete }}
+        </button>
+        {{ i }} <a href="{{ link.address }}"> {{ link.name }}</a>
+      </li>
+    </ul>
+    <div class="item">
+      <app-zad5-second [details]="desc" *ngIf="isDetailsShown">
+      </app-zad5-second>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-zad5-third
+        *ngIf="showThirdComponent"
+        (hideComponent)="onHide($event)"
+        (justHideComponent)="onJustHide($event)"
+      >
+      </app-zad5-third>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="card m-2">
+  <div class="form">
+    <h5>Same value from each other input</h5>
+    <div class="form-group m-3">
+      <label for="inp1">
+        <h3>Input1</h3>
+        <input
+          #box
+          (keyup)="onKey(box.value)"
+          (blur)="update(box.value)"
+          value="{{ values2 }}"
+        />
+      </label>
+    </div>
+    <div class="form-group m-3">
+      <label for="inp1">
+        <h3>Input2</h3>
+        <input #box2 (keyup)="onKey2(box2.value)" value="{{ values }}" />
+      </label>
+    </div>
+  </div>
+</div>

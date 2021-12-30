@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="row">
+    <div class="col-3">
+      <ul>
+        <li *ngFor="let img of imgGallery; let i = index" class="m-2">
+          <img
+            (click)="onAddParent(i, img.url)"
+            alt="{{ img.alt }}"
+            style="height: 125px; width: 125px"
+            [ngClass]="{
+              activeLinks: index == i
+            }"
+          />
+        </li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <app-zad17-second
+        [indexSend]="index"
+        [tableLength]="imgGallery.length || 0"
+        [src]="src"
+        (onAddImg)="onAddParent(index, src)"
+        (next)="onNextParent()"
+        (prev)="onPrevParent()"
+      >
+      </app-zad17-second>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="card m-1">
+  <header class="card-header">
+    <span class="card-title">Add new link</span>
+  </header>
+  <form (ngSubmit)="onAdd()" [formGroup]="linkForm">
+    <div class="card-body">
+      <div class="form-group">
+        <label for="name" class="form-label">Name httpSite: </label>
+        <input class="form-control" formControlName="name" />
+      </div>
+      <div class="form-group">
+        <label for="url" class="form-label">Url: </label>
+        <input class="form-control" formControlName="url" />
+      </div>
+
+      <div class="form-group">
+        <label for="name" class="form-label">Description: </label>
+        <textarea class="form-control" formControlName="description">
+        </textarea>
+      </div>
+      <div class="card-footer d-flex justify-content-left">
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </form>
+</div>

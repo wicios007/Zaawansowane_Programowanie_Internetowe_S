@@ -1,0 +1,37 @@
+<div class="card m-4">
+  <div class="card-header">
+    <span class="card-title"><h5>Lista linków</h5></span>
+    <ul class="list-group">
+      <li
+        [ngClass]="{
+          'list-group-item': true,
+          'list-group-item-action': true,
+          activeLinks: index == idx
+        }"
+        class="list-group-item"
+        *ngFor="let link of linksArray$ | async; let idx = index"
+      >
+        {{ idx + 1 }}. <a href="{{ link.links.url }}">{{ link.links.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <app-zad27-add-link-form></app-zad27-add-link-form>
+    <button class="btn btn-primary" (click)="onShow()">showLogs</button>
+
+    <div class="item">
+      <app-zad5-second [details]="desc" *ngIf="isDetailsShown">
+      </app-zad5-second>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-zad5-third
+        *ngIf="showThirdComponent"
+        (hideComponent)="onHide($event)"
+        (justHideComponent)="onJustHide($event)"
+      >
+      </app-zad5-third>
+    </div>
+  </div>
+</div>

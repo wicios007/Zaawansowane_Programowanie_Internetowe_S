@@ -1,0 +1,12 @@
+<div>
+  <h3>Run second component</h3>
+  <button class="btn btn-primary" (click)="onDisplaySecond()">
+    {{ showText }}
+  </button>
+  <app-zad12i13-second
+    [isActive]="isShowed"
+    *ngIf="isShowed"
+    (deactive)="onDisplaySecond()"
+  >
+  </app-zad12i13-second>
+</div>

@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-body">
+    <button class="btn btn-primary" (click)="show()">show</button>
+    <p>{{ receivedText }}</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <app-zad1416-second
+      (sendText)="onReceive($event)"
+      *ngIf="isShowed"
+    ></app-zad1416-second>
+  </div>
+</div>

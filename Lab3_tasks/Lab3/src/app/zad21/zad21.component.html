@@ -1,0 +1,87 @@
+<div class="card m-1">
+  <form (ngSubmit)="sendData()" #form="ngForm" id="form">
+    <div class="form-header m-3"></div>
+    <div class="form-group m-3">
+      <label for="nameHttp">
+        <h3>Name of http site:</h3>
+        <input
+          class="form-control"
+          [class.is-invalid]="!box1.control.valid && box1.control.dirty"
+          [class.is-valid]="box1.control.valid && box1.control.dirty"
+          (input)="onInitBox1(box1.value)"
+          style="width: 600px"
+          id="inp1"
+          [ngModelOptions]="{ standalone: true }"
+          [(ngModel)]="name"
+          name="name"
+          required
+          #box1="ngModel"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="!box1.control.valid && box1.control.dirty"
+        >
+          blednie wprowadzone dane
+        </div>
+      </label>
+    </div>
+    <div class="form-group m-3">
+      <label for="url">
+        <h3>provide the URL</h3>
+        <input
+          [class.is-invalid]="!box2.control.valid && box2.control.dirty"
+          [class.is-valid]="box2.control.valid && box2.control.dirty"
+          class="form-control"
+          style="width: 600px"
+          (input)="onInitBox2(box2.value)"
+          id="inp2"
+          [ngModelOptions]="{ standalone: true }"
+          [(ngModel)]="url"
+          name="url"
+          required
+          minlength="20"
+          #box2="ngModel"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="!box2.control.valid && box2.control.dirty"
+        >
+          Blednie wprowadzone dane
+        </div>
+      </label>
+    </div>
+    <div class="form-group m-3">
+      <label for="textarea">
+        <h3>Description</h3>
+        <textarea
+          [class.is-invalid]="!box3.control.valid && box3.control.dirty"
+          [class.is-valid]="box3.control.valid && box3.control.dirty"
+          class="form-control"
+          style="width: 600px"
+          #box3="ngModel"
+          (input)="onInitBox3(box3.value)"
+          id="inp3"
+          [ngModelOptions]="{ standalone: true }"
+          [(ngModel)]="description"
+          required
+        ></textarea>
+        <div
+          class="invalid-feedback"
+          *ngIf="!box3.control.valid && box3.control.dirty"
+        ></div>
+      </label>
+    </div>
+    <div class="card-footer d-flex justify-content-left">
+      <button
+        type="submit"
+        class="btn btn-primary m-2"
+        [disabled]="!form.valid"
+      >
+        Zapisz
+      </button>
+      <button type="button" class="btn btn-primary m-2" (click)="clear()">
+        Anuluj
+      </button>
+    </div>
+  </form>
+</div>

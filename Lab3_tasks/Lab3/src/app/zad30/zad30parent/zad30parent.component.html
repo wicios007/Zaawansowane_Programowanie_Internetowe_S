@@ -1,0 +1,21 @@
+<div class="card m-1">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-3">
+        <button class="btn btn-primary" [routerLink]="['/home']">home</button>
+        <router-outlet></router-outlet>
+      </div>
+      <div class="col-3">
+        <button class="btn btn-primary" [routerLink]="['/oNas']">oNas</button>
+        <router-outlet></router-outlet>
+      </div>
+
+      <div class="col-3">
+        <button class="btn btn-primary" [routerLink]="['/kontakt']">
+          Kontakt
+        </button>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

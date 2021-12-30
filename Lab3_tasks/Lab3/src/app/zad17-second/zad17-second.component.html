@@ -1,0 +1,23 @@
+<ul>
+  <li>
+    <img
+      src="{{ src }}"
+      style="height: 200px; width: 200px"
+      alt="click the miniature to show full size img"
+    />
+  </li>
+  <button
+    (click)="onPrev()"
+    [disabled]="indexSend == 0"
+    class="btn btn-primary"
+  >
+    Previous
+  </button>
+  <button
+    (click)="onNext()"
+    [disabled]="indexSend == tableLength - 1"
+    class="btn btn-primary m-2"
+  >
+    Next
+  </button>
+</ul>

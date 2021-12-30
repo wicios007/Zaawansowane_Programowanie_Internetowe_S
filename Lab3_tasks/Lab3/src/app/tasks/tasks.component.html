@@ -1,0 +1,11 @@
+<section>
+  <button class="btn btn-primary" (click)="onClick()">Show my name</button>
+  <button class="btn btn-primary" (click)="onClickF()">
+    with 20px fontSize
+  </button>
+  <button class="btn btn-primary" (click)="onClickC()">with green color</button>
+
+  <p [ngStyle]="bfClass" [ngStyle]="bcClass">
+    {{ person.firstName }} {{ person.lastName }}
+  </p>
+</section>

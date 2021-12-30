@@ -1,0 +1,14 @@
+<div class="card m-4">
+  <header class="card-header">
+    <span class="card-title"> </span>
+  </header>
+  <div class="card-body">
+    <h2>{{ author?.name }} {{ author?.lastName }}</h2>
+    <div>
+      <b>{{ author?.email }}</b>
+    </div>
+  </div>
+  <div class="card-footer d-flex justify-content-end">
+    <button class="btn btn-primary" (click)="close()">Zamknij</button>
+  </div>
+</div>

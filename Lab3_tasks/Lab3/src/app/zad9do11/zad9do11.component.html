@@ -1,0 +1,32 @@
+<div class="card m-4">
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <th scope="col">Gallery</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let img of imgTable; let i = index">
+          <td *ngIf="i == selectedIndex">
+            <img src="{{ img.url }}" style="width: 400px; height: 300px" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="btn btn-primary"
+      [disabled]="selectedIndex == 0"
+      *ngIf="selectedIndex >= 1"
+      (click)="onPrevent()"
+    >
+      Prev
+    </button>
+    <button
+      class="btn btn-primary"
+      [disabled]="selectedIndex == imgTable.length - 1"
+      *ngIf="selectedIndex < imgTable.length - 1"
+      (click)="onNext()"
+    >
+      Next
+    </button>
+  </div>
+</div>
