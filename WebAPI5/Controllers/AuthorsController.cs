@@ -9,7 +9,7 @@ namespace webapi5.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    class AuthorsController : ControllerBase
+    public class AuthorsController : ControllerBase
     {
         private readonly AppDbContext context;
 
