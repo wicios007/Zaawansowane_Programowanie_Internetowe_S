@@ -14,3 +14,49 @@
   ![Alt text](Img/2020_01_17_10_26_41_DevDocs_API_Documentation.png?raw=true)
   ![Alt text](Img/2020_01_17_10_28_09_Offline_DevDocs.png?raw=true)
 
+### Pobranie i przetestowanie szablonów kolokwium
+1) Proszę otworzyć folder `Templates` przy pomocy Visual Studio Code.
+  ![Alt text](Img/open_folder.png?raw=true)
+  ![Alt text](Img/open_folder2.png?raw=true)
+  ![Alt text](Img/open_folder3.png?raw=true)
+2) Proszę w Visual Studio Code otworzyć nowy terminal `Terminal -> New Terminal`.
+
+#### Szablon Angular
+1) Proszę przejść do folderu `kolokwium-angular` przy pomocy poniższego polecenia.
+  `cd kolokwium-angular`
+2) Nastepnie proszę pobrać wszystkie potrzebne biblioteki przy pomocy `npm`. W tym celu proszę wykonać poniższe polecenie.
+  `npm install`
+3) W celu weryfikacji poprawności działania aplikacji proszę ją uruchomić.
+  `npm start`
+   Aplikacja powinna być dostępna pod adresem: `http://localhost:4200`.
+  ![Alt text](Img/angular_run.png?raw=true)
+4) Jeśli aplikacja działa poprawnie proszę zamknąć przy pomocy kombinacji klawiszy `ctrl + c`.
+5) Proszę przejść do folderu wyżej (`Templates`), przy pomocy poniższego polecenia.
+  `cd ..`
+
+#### Szablon React
+1) Proszę przejść do folderu `kolokwium-react` przy pomocy poniższego polecenia.
+  `cd kolokwium-react`
+2) Nastepnie proszę pobrać wszystkie potrzebne biblioteki przy pomocy `npm`. W tym celu proszę wykonać poniższe polecenie.
+  `npm install`
+3) W celu weryfikacji poprawności działania aplikacji proszę ją uruchomić.
+  `npm start`
+   Aplikacja powinna być dostępna pod adresem: `http://localhost:3000`.
+  ![Alt text](Img/react_run.png?raw=true)
+4) Jeśli aplikacja działa poprawnie proszę zamknąć przy pomocy kombinacji klawiszy `ctrl + c`.
+5) Proszę przejść do folderu wyżej (`Templates`), przy pomocy poniższego polecenia.
+  `cd ..`
+
+#### Szablon Web API
+1) Proszę przejść do folderu `Kolokwium.Api` przy pomocy poniższego polecenia.
+  `cd Kolokwium.Api`
+2) W celu weryfikacji poprawności działania aplikacji proszę, ją uruchomić.
+  `dotnet run`
+   Web API powinno być dostępne pod adresem: `http://localhost:5000/api/{controller}` 
+   Aplikacja Swagger jest dostępna pod adresem: `http://localhost:5000/swagger`.
+  ![Alt text](Img/swagger.png?raw=true)
+4) Jeśli aplikacja działa poprawnie proszę zamknąć przy pomocy kombinacji klawiszy `ctrl + c`.
+5) Proszę przejść do folderu wyżej (`Templates`), przy pomocy poniższego polecenia.
+  `cd ..`
+
+Życzę Państwu powodzenia na kolokwium! :)
