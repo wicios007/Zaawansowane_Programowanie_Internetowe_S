@@ -41,7 +41,7 @@
   `npm install`
 3) W celu weryfikacji poprawności działania aplikacji proszę ją uruchomić.
   `npm start`
-   Aplikacja powinna być dostępna pod adresem: `http://localhost:3000`.
+   Aplikacja powinna być dostępna pod adresem: [http://localhost:3000] (http://localhost:3000).
   ![Alt text](Img/react_run.png?raw=true)
 4) Jeśli aplikacja działa poprawnie proszę zamknąć przy pomocy kombinacji klawiszy `ctrl + c`.
 5) Proszę przejść do folderu wyżej (`Templates`), przy pomocy poniższego polecenia.
