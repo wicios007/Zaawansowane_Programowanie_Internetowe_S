@@ -28,7 +28,7 @@
   `npm install`
 3) W celu weryfikacji poprawności działania aplikacji proszę ją uruchomić.
   `npm start`
-   Aplikacja powinna być dostępna pod adresem: `http://localhost:4200`.
+   Aplikacja powinna być dostępna pod adresem: [http://localhost:4200](http://localhost:4200).
   ![Alt text](Img/angular_run.png?raw=true)
 4) Jeśli aplikacja działa poprawnie proszę zamknąć przy pomocy kombinacji klawiszy `ctrl + c`.
 5) Proszę przejść do folderu wyżej (`Templates`), przy pomocy poniższego polecenia.
@@ -53,7 +53,7 @@
 2) W celu weryfikacji poprawności działania aplikacji proszę, ją uruchomić.
   `dotnet run`
    Web API powinno być dostępne pod adresem: `http://localhost:5000/api/{controller}` 
-   Aplikacja Swagger jest dostępna pod adresem: `http://localhost:5000/swagger`.
+   Aplikacja Swagger jest dostępna pod adresem: [http://localhost:5000/swagger](http://localhost:5000/swagger).
   ![Alt text](Img/swagger.png?raw=true)
 4) Jeśli aplikacja działa poprawnie proszę zamknąć przy pomocy kombinacji klawiszy `ctrl + c`.
 5) Proszę przejść do folderu wyżej (`Templates`), przy pomocy poniższego polecenia.
