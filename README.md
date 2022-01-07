@@ -2,8 +2,8 @@
 ## Przygotowanie do kolokwium:
 ### Pobranie i załadowanie dokumentacji
 1) Proszę pobrać gałąź kolokwium w formie pliku zip. A następnie wypakować jego zawartość.
-<img src="Img/download_zip.png" width=350 height=300 />
-2) Proszę uruchomić przeglądarkę i przejść pod adres: https://devdocs.io/
+  <img src="Img/download_zip.png" width=350 height=300></img>
+2) Proszę uruchomić przeglądarkę i przejść pod adres: [https://devdocs.io/](https://devdocs.io/)
 3) Następnie proszę przejść do `Preferences -> Import`.
   ![Alt text](Img/2020_01_17_10_19_11_DevDocs_API_Documentation.png?raw=true)
   ![Alt text](Img/2020_01_17_10_20_08_Preferences_DevDocs.png?raw=true)
@@ -16,9 +16,13 @@
 
 ### Pobranie i przetestowanie szablonów kolokwium
 1) Proszę otworzyć folder `Templates` przy pomocy Visual Studio Code.
-  <img src="Img/open_folder.png" width=400 height=300 />
-  <img src="Img/open_folder2.png" width=400 height=300 />
-  <img src="Img/open_folder3.png" width=400 height=300 />
+
+    <img src="Img/open_folder.png" width=400 height=300></img>
+
+    <img src="Img/open_folder2.png" width=400 height=300></img>
+
+    <img src="Img/open_folder3.png" width=400 height=300></img>
+
 2) Proszę w Visual Studio Code otworzyć nowy terminal `Terminal -> New Terminal`.
 
 #### Szablon Angular
