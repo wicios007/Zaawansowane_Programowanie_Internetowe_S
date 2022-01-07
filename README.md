@@ -16,9 +16,9 @@
 
 ### Pobranie i przetestowanie szablonów kolokwium
 1) Proszę otworzyć folder `Templates` przy pomocy Visual Studio Code.
-  <img src="Img/open_folder.png" width=350 height=300 />
-  <img src="Img/open_folder2.png" width=500 height=400 />
-  <img src="Img/open_folder3.png" width=500 height=400 />
+  <img src="Img/open_folder.png" width=400 height=300 />
+  <img src="Img/open_folder2.png" width=400 height=300 />
+  <img src="Img/open_folder3.png" width=400 height=300 />
 2) Proszę w Visual Studio Code otworzyć nowy terminal `Terminal -> New Terminal`.
 
 #### Szablon Angular
