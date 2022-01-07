@@ -2,7 +2,7 @@
 ## Przygotowanie do kolokwium:
 ### Pobranie i załadowanie dokumentacji
 1) Proszę pobrać gałąź kolokwium w formie pliku zip. A następnie wypakować jego zawartość.
-<img src="Img/download_zip.png" width=500 height=500 /> 
+<img src="Img/download_zip.png" width=500 height=300 /> 
 2) Proszę uruchomić przeglądarkę i przejść pod adres: https://devdocs.io/
 3) Następnie proszę przejść do `Preferences -> Import`.
   ![Alt text](Img/2020_01_17_10_19_11_DevDocs_API_Documentation.png?raw=true)
