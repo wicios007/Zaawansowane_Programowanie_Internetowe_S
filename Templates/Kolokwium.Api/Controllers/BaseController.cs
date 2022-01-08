@@ -4,10 +4,10 @@ namespace Kolokwium.Api.Controllers {
     
     [ApiController]
     [Route("api/[controller]")]
-    public abstract class MainController : ControllerBase {
+    public abstract class BaseController : Controller {
         protected ApplicationDbContext DbContext;
 
-        public MainController(ApplicationDbContext dbContext)
+        public BaseController(ApplicationDbContext dbContext)
         {
             DbContext = dbContext;
         }
