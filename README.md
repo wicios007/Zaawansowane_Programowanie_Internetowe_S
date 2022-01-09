@@ -25,42 +25,65 @@
 
 2) Proszę w Visual Studio Code otworzyć nowy terminal `Terminal -> New Terminal`.
 
+
 #### Szablon Angular
 1) Proszę przejść do folderu `kolokwium-angular` przy pomocy poniższego polecenia.
-  `cd kolokwium-angular`
+
+    ```cd kolokwium-angular```
+  
 2) Nastepnie proszę pobrać wszystkie potrzebne biblioteki przy pomocy `npm`. W tym celu proszę wykonać poniższe polecenie.
-  `npm install`
+  
+    ```npm install```
+  
 3) W celu weryfikacji poprawności działania aplikacji proszę ją uruchomić.
-  `npm start`
+  
+    ```npm start```
+  
    Aplikacja powinna być dostępna pod adresem: [http://localhost:4200](http://localhost:4200).
   ![Alt text](Img/angular_run.png?raw=true)
 4) Jeśli aplikacja działa poprawnie proszę zamknąć przy pomocy kombinacji klawiszy `ctrl + c`.
 5) Proszę przejść do folderu wyżej (`Templates`), przy pomocy poniższego polecenia.
-  `cd ..`
+
+    ```cd ..```
+
 
 #### Szablon React
 1) Proszę przejść do folderu `kolokwium-react` przy pomocy poniższego polecenia.
-  `cd kolokwium-react`
+  
+    ```cd kolokwium-react```
+    
 2) Nastepnie proszę pobrać wszystkie potrzebne biblioteki przy pomocy `npm`. W tym celu proszę wykonać poniższe polecenie.
-  `npm install`
+
+    ```npm install```
+    
 3) W celu weryfikacji poprawności działania aplikacji proszę ją uruchomić.
-  `npm start`
+
+    ```npm start```
+
    Aplikacja powinna być dostępna pod adresem: [http://localhost:3000](http://localhost:3000).
   ![Alt text](Img/react_run.png?raw=true)
 4) Jeśli aplikacja działa poprawnie proszę zamknąć przy pomocy kombinacji klawiszy `ctrl + c`.
 5) Proszę przejść do folderu wyżej (`Templates`), przy pomocy poniższego polecenia.
-  `cd ..`
+    ```cd ..```
+
 
 #### Szablon Web API
 1) Proszę przejść do folderu `Kolokwium.Api` przy pomocy poniższego polecenia.
-  `cd Kolokwium.Api`
+
+    ```cd Kolokwium.Api```
+  
 2) W celu weryfikacji poprawności działania aplikacji proszę, ją uruchomić.
-  `dotnet run`
+
+    ```dotnet run```
+  
    Web API powinno być dostępne pod adresem: `http://localhost:5000/api/{controller}` 
    Aplikacja Swagger jest dostępna pod adresem: [http://localhost:5000/swagger](http://localhost:5000/swagger).
   ![Alt text](Img/swagger.png?raw=true)
 4) Jeśli aplikacja działa poprawnie proszę zamknąć przy pomocy kombinacji klawiszy `ctrl + c`.
 5) Proszę przejść do folderu wyżej (`Templates`), przy pomocy poniższego polecenia.
-  `cd ..`
 
+    ```cd ..```
+
+```diff
 Życzę Państwu powodzenia na kolokwium! :)
+```
