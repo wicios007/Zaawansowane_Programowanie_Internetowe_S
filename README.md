@@ -85,5 +85,5 @@
     ```cd ..```
 
 ```diff
-Życzę Państwu powodzenia na kolokwium! :)
+- Życzę Państwu powodzenia na kolokwium! :)
 ```
