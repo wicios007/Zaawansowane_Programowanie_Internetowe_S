@@ -18,6 +18,7 @@ namespace Kolokwium.Api {
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices (IServiceCollection services) {
 
+            services.AddCors ();
             services.AddDbContext<ApplicationDbContext> (options =>
                 options.UseInMemoryDatabase ("InMemoryDb")
             );
@@ -26,7 +27,7 @@ namespace Kolokwium.Api {
             services.AddSwaggerGen (c => {
                 c.SwaggerDoc ("v1", new OpenApiInfo { Title = "Kolokwium.Api", Version = "v1" });
             });
-            services.SeedData();
+            services.SeedData ();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,8 +38,10 @@ namespace Kolokwium.Api {
                 app.UseSwaggerUI (c => c.SwaggerEndpoint ("/swagger/v1/swagger.json", "Kolokwium.Api v1"));
             }
 
-            app.UseHttpsRedirection ();
-
+            app.UseCors (options =>
+                options.WithOrigins ("http://localhost:3000", "http://localhost:4200")
+                    .WithMethods("GET", "POST", "PUT", "DELETE")
+            );
             app.UseRouting ();
 
             app.UseAuthorization ();
