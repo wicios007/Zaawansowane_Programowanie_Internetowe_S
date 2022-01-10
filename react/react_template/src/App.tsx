@@ -10,6 +10,7 @@ import { Zad12_combined } from './components/Zad12_combined'
 import { Zad16 } from './components/Zad16'
 import { Zad17 } from './components/Zad17'
 import { Zad18 } from './components/Zad18'
+import { Api1 } from './components/Api1'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Zad16/>
       <Zad17/>
       <Zad18/>
+      <Api1/>
     </div>
   );
 }
