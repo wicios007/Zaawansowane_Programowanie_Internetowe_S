@@ -34,6 +34,7 @@ namespace webapi
                 options.UseSqlServer(Configuration.GetConnectionString("default"));
             });
 
+            services.AddCors();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -51,6 +52,13 @@ namespace webapi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "webapi v1"));
             }
 
+            app.UseCors(options => {
+                options
+                    .WithOrigins("http://localhost:4200", "http://localhost:3000")
+                    .WithHeaders("Content-Type")
+                    .AllowAnyMethod();
+                    //.WithMethods("GET", "POST", "DELETE", "PUT"); 
+            });
             app.UseHttpsRedirection();
 
             app.UseRouting();
