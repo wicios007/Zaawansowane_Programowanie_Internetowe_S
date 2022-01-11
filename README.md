@@ -109,7 +109,7 @@
     cd ..
     ```
 
-### Proszę przejść do wykonywania zadań.
+### Proszę przejść do wykonywania zadań
 
 ```diff
 - Życzę Państwu powodzenia na kolokwium! :)
@@ -121,6 +121,7 @@
     rmdir Kolokwium.Api/bin -recurse
     rmdir kolokwium-react\node_modules\ -recurse
     rmdir kolokwium-angular\node_modules\ -recurse
+    rmdir kolokwium-angular\.angular\ -recurse 
     
     ```
 2)  Następnie proszę spakować rozwiązanie przy pomocy poniższego kodu. Plik `Rozwiazanie_Kolokwium.zip` będzie znajdował sie w folderze `Templates`
