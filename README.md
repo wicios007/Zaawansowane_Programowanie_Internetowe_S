@@ -109,6 +109,30 @@
     cd ..
     ```
 
+### Proszę przejść do wykonywania zadań.
+
 ```diff
 - Życzę Państwu powodzenia na kolokwium! :)
 ```
+### Umieszenie rozwiązania w archiwum
+1)  Po otrzymaniu oceny proszę przejść do folderu `Templates` a następnie wykonać poniższe polecenia.
+    ```powershell
+    rmdir Kolokwium.Api/obj -recurse
+    rmdir Kolokwium.Api/bin -recurse
+    rmdir kolokwium-react\node_modules\ -recurse
+    rmdir kolokwium-angular\node_modules\ -recurse
+    
+    ```
+2)  Następnie proszę spakować rozwiązanie przy pomocy poniższego kodu. Plik `Rozwiazanie_Kolokwium.zip` będzie znajdował sie w folderze `Templates`
+
+    ```
+    tar caf Rozwiazanie_Kolokwium.zip * 
+    
+    ```
+    
+3)  Proszę przejść pod adres [Archiver](http://ik2a.kik.pcz.czest.pl/archiver/TestArchive/Index)
+4)  Następnie proszę Państwa aktywny test i kilknąć przycisk `Link`
+
+    ![Alt text](Img/ArchiverUpload1.png?raw=true)
+    
+5)  Proszę wypełnić formularz podając swoje dane, wskazać plik `Rozwiazanie_Kolokwium.zip`, a następnie nacisnąc przycisk `Upload`
