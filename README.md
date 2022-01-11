@@ -127,7 +127,7 @@
 2)  Następnie proszę spakować rozwiązanie przy pomocy poniższego kodu. Plik `Rozwiazanie_Kolokwium.zip` będzie znajdował sie w folderze `Templates`
 
     ```
-    tar caf Rozwiazanie_Kolokwium.zip * 
+    tar caf Rozwiazanie_Kolokwium.zip --exclude=./Rozwiazanie_Kolokwium.zip . 
     
     ```
     
