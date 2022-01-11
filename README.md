@@ -132,7 +132,7 @@
     ```
     
 3)  Proszę przejść pod adres [Archiver](http://ik2a.kik.pcz.czest.pl/archiver/TestArchive/Index)
-4)  Następnie proszę Państwa aktywny test i kilknąć przycisk `Link`
+4)  Następnie proszę wybrać Państwa test i kilknąć przycisk `Link`
 
     ![Alt text](Img/ArchiverUpload1.png?raw=true)
     
