@@ -1,5 +1,4 @@
-import { ThrowStmt } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-zad05',
@@ -9,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class Zad05Component implements OnInit {
 
 
+
   siteList: any;
   selectedIndex: number;
+  link: any;
+  
+
   constructor() { 
     this.siteList = [];
     this.selectedIndex = -1;
@@ -18,7 +21,7 @@ export class Zad05Component implements OnInit {
 
   ngOnInit(): void {
     this.siteList = [
-      { name: "Google", url: "http://www.google.com", clicked: false },
+      { name: "Google", url: "http://www.google.com", description: "Strona google", clicked: false },
       { name: "StackOverflow", url: "http://www.stackoverflow.com", clicked: false },
       { name: "Politechnika Częstochowska", url: "https://pcz.pl", clicked: false },
       { name: "PCz WIMiI", url: "https://wimii.pcz.pl", clicked: false },
@@ -27,6 +30,9 @@ export class Zad05Component implements OnInit {
   }
   listItemClick(index: number){
     this.selectedIndex = index;
+    this.link = this.siteList[index]
   }
+  showDetails(){
 
+  }
 }

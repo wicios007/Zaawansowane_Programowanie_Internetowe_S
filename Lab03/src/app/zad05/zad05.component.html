@@ -2,4 +2,5 @@
     <ul class="list-group">
         <li (click)="listItemClick(i)" [ngClass]="{'list-group-item':true, 'list-group-item-action':true, 'active': selectedIndex == i }" *ngFor="let site of siteList; let i=index"><a href="{{site.url}}" target="_blank">{{site.name}}</a></li>
     </ul>
+    <app-link-details [link]="link"></app-link-details>
 </div>

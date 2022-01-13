@@ -1,0 +1,6 @@
+<button class="btn btn-primary" (click)="activateComponentTwo()">Wyświetl drugi komponent</button>
+
+<div *ngIf="componentTwoActive">
+    <app-zad14c2 [isActive]="componentTwoActive" (sendText)="getText($event)" (deactivate)="hideComponent()"></app-zad14c2>
+</div>
+<div>{{this.text}}</div>

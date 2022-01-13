@@ -31,7 +31,7 @@ namespace webapi5
             services.AddDbContext<AppDbContext>(options =>{
                 options.UseSqlite(Configuration.GetConnectionString("default"));
             });
-            
+            services.AddCors();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -49,6 +49,13 @@ namespace webapi5
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "webapi5 v1"));
             }
+
+            app.UseCors(options =>
+            {
+                options.WithOrigins("http://localhost:3000")
+                .WithHeaders("content-type")
+                .WithMethods("GET", "POST");
+            });
 
             app.UseHttpsRedirection();
 
