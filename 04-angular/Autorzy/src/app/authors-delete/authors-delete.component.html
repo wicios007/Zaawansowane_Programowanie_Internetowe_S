@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header">
+        Czy na pewno chcesz usunąć autora?
+    </div>
+    <div class="card-content">
+        <h3>Imię: {{author.firstName}}</h3>
+        <h3>Nazwisko: {{author.lastName}}</h3>
+    </div>
+    <div class="card-actions">
+        <div class="row">
+        <div class="col">
+            <button class='btn-danger btn-block' (click)="deleteAuthor()">Tak</button>
+        </div>    
+        <div class="col">
+            <button class='btn-primary btn-block' (click)="redirectToList()">Nie</button>
+        </div>    
+        </div>
+
+        
+    </div>
+</div>

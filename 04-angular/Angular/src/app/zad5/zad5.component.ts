@@ -61,7 +61,7 @@ export class Zad5Component implements OnInit {
 
   clickedLink(index : number) {
     this.index = index
-    this.link.emit(this.linksService.links[index])
+    // this.link.emit(this.linksService.links[index])
     this.sent = this.linksService.links[index]
     this.detailsShow = true
     this.deleteShow = false

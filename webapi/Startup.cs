@@ -33,7 +33,7 @@ namespace webapi
             services.AddDbContext<AppDbContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("default"));
             });
-
+            services.AddCors();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -50,6 +50,16 @@ namespace webapi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "webapi v1"));
             }
+            // seeder.Seed();
+
+            app.UseCors(options =>
+            {
+                options
+                // .AllowAnyOrigin()
+                 .WithOrigins("http://localhost:4200")
+                .WithHeaders("content-type")
+                .WithMethods("GET", "POST", "DELETE", "PUT");
+            });
 
             app.UseHttpsRedirection();
 

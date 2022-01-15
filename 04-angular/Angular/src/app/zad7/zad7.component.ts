@@ -17,15 +17,12 @@ export class Zad7Component implements OnInit {
    this.counter = this.srv.plus(1)
   }
   minusOne(){
-    // this.counter = this.counter--
     this.counter = this.srv.minus(1)
   }
   plusTwo(){
-    //this.counter += 2
     this.counter = this.srv.plus(1)
   }
   minusTwo(){
-    //this.counter -= 2
     this.counter = this.srv.minus(2)
   }
 

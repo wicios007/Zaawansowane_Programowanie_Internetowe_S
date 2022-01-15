@@ -91,7 +91,10 @@ export class Zad6 extends React.Component<{}, State> {
                             <Card.Body>
                                 <Row>
                                     <Col>
+                                    { this.state.selectedItem > 1 &&
                                         <Button onClick={this.prevPhoto}>prev</Button>
+                                    }
+                                        
                                     </Col>
                                     <Col>
                                         <List>
@@ -105,7 +108,10 @@ export class Zad6 extends React.Component<{}, State> {
                                         </List>
                                     </Col>
                                     <Col>
+                                    {this.state.selectedItem < this.photos.length &&
                                         <Button onClick={this.nextPhoto}>next</Button>
+                                    }
+                                        
                                     </Col>
                                 </Row>
                             </Card.Body>

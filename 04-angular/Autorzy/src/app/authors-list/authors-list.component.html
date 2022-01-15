@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-3">
+                            <a routerLink="./">Autorzy</a>        
+                        </div>
+                        <div class="col-9">
+                            <button routerLink="add" class="btn btn-block btn-primary">Dodaj nowego autora</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let author of authors; let i = index">
+                            <div class="row">
+                                <div class="col-9" (click)="redirectTo(author.id)">
+                                    <app-authors-single [authorInput]="author"></app-authors-single>
+                                    <!-- {{i+1}} <a >{{author.firstName}} {{author.lastName}} -->
+                                    <!-- </a> -->
+                                </div>
+                                <div class="col-3">
+                                    <button (click)="redirectToEdit(author.id)" class="btn btn-primary">Edytuj</button>
+                                    <button (click)="redirectToDelete(author.id)" class="btn btn-danger">Usuń</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

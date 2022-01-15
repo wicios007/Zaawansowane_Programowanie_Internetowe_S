@@ -88,7 +88,7 @@ namespace webapi.Controllers
         public async Task<IActionResult> Update(int id, [FromBody] Author author){
             try
             {
-                var autor = await dbContext.Authors.FirstOrDefaultAsync(c => c.Id == id);
+                var autor = await dbContext.Authors.Include(c => c.Emails).FirstOrDefaultAsync(c => c.Id == id);
                 if(autor is null)
                 {
                     return NotFound("Autor nie został znaleziony");
@@ -97,7 +97,7 @@ namespace webapi.Controllers
                 autor.FirstName = author.FirstName;
                 autor.LastName = author.LastName;
                 await dbContext.SaveChangesAsync();
-                return Ok();
+                return Ok(autor);
             }
             catch
             {

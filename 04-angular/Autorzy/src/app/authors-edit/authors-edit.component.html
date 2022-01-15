@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-header">
+        Edytuj autora
+    </div>
+    <div class="card-content">
+        <form [formGroup]="form" (ngSubmit)="ngOnSubmit()">
+            <div>
+                <label for="firstName">Imię</label>
+                <input type="text" id="firstName" name="firstName" class="form-control" [formControl]="$any(form).controls['firstName']">
+                <div class="text-danger" *ngIf="$any(form).controls['firstName'].hasError('required') && $any(form).controls['firstName'].touched">
+                    Imię jest wymagane
+                </div>
+            </div>
+            <div>
+                <label for="lastName">Nazwisko</label>
+                <input type="text" id="lastName" name="lastName" class="form-control" [formControl]="$any(form).controls['lastName']">
+                <div class="text-danger" *ngIf="$any(form).controls['lastName'].hasError('required') && $any(form).controls['lastName'].touched">
+                    Nazwisko jest wymagane
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit" [disabled]="!$any(form).valid">Dodaj</button>
+        </form>
+        
+    </div>
+</div>

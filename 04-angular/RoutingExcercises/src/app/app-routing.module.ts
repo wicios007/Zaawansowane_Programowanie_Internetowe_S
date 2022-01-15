@@ -9,10 +9,10 @@ const routes: Routes = [
   {
     path: '',
     component: FullComponent,
-    children:[
-      {path : 'home', component : HomeComponent},
-      {path : 'oNas', component : OnasComponent},
-      {path : 'kontakt', component : KontaktComponent}
+    children: [
+      { path: 'home', component: HomeComponent },
+      { path: 'oNas', component: OnasComponent },
+      { path: 'kontakt', component: KontaktComponent }
     ]
   },
   // {
