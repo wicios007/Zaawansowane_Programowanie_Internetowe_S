@@ -33,10 +33,6 @@ namespace webapi
             services.AddDbContext<AppDbContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("default"));
             });
-<<<<<<< HEAD
-=======
-
->>>>>>> 77a7e8683b6c16f57537a137e8cf093f977594ec
             services.AddCors();
             services.AddControllers();
             services.AddSwaggerGen(c =>
