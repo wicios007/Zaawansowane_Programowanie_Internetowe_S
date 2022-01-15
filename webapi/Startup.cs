@@ -33,6 +33,10 @@ namespace webapi
             services.AddDbContext<AppDbContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("default"));
             });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 77a7e8683b6c16f57537a137e8cf093f977594ec
             services.AddCors();
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -61,6 +65,13 @@ namespace webapi
                 .WithMethods("GET", "POST", "DELETE", "PUT");
             });
 
+            app.UseCors(options => {
+                options
+                    .WithOrigins("http://localhost:4200", "http://localhost:3000")
+                    .WithHeaders("Content-Type")
+                    .AllowAnyMethod();
+                    //.WithMethods("GET", "POST", "DELETE", "PUT"); 
+            });
             app.UseHttpsRedirection();
 
             app.UseRouting();
