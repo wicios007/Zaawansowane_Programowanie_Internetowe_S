@@ -117,12 +117,12 @@
 ### Umieszenie rozwiązania w archiwum
 1)  Po otrzymaniu oceny proszę przejść do folderu `Templates` a następnie wykonać poniższe polecenia.
     ```powershell
-    rmdir Kolokwium.Api/obj -recurse
-    rmdir Kolokwium.Api/bin -recurse
-    rmdir kolokwium-react\node_modules\ -recurse
-    rmdir kolokwium-angular\node_modules\ -recurse
-    rmdir kolokwium-angular\.angular\ -recurse 
-    
+    rmdir .\Kolokwium.Api\obj -recurse
+    rmdir .\Kolokwium.Api\bin -recurse
+    rmdir .\kolokwium-react\node_modules -recurse
+    rmdir .\kolokwium-angular\node_modules -recurse
+    rmdir .\kolokwium-angular\.angular -recurse 
+ 
     ```
 2)  Następnie proszę spakować rozwiązanie przy pomocy poniższego kodu. Plik `Rozwiazanie_Kolokwium.zip` będzie znajdował sie w folderze `Templates`
 
